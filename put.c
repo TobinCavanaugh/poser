@@ -8,30 +8,44 @@
 #include "rare.h"
 #include "dialect.h"
 
-static HANDLE stdout;
+static u64 stdout = 1;
+
 
 INLINE u0 set_stdout() {
-    if (rare(stdout == null)) {
-        stdout = GetStdHandle(STD_OUTPUT_HANDLE);
+#if OS == WIN
+    if (rare(stdout == 1 || stdout == 0)) {
+        stdout = (u64) GetStdHandle(STD_OUTPUT_HANDLE);
     }
+#endif
+}
+
+INLINE u0 write(u64 handle, byte *data, u64 len) {
+
+    returnif(rare(data == NULL));
+    returnif(rare(len == 0));
+
+#if OS == WIN
+    u64 done = 0;
+    WriteFile((void *) handle, data, len, &done, NULL);
+#elif OS == LINUX
+    //TODO Go to coffee shop and write up the asm for this
+    //probably tomorrow (the 3rd)
+#endif
+
 }
 
 INLINE u0 put_n() {
     set_stdout();
-    DWORD done = 0;
-    WriteFile(stdout, "\n", 1, &done, NULL);
+    write(stdout, "\n", 1);
 }
 
 INLINE u0 put_s(char *str) {
     set_stdout();
-    returnif(str == NULL);
-    DWORD done;
-    WriteFile(stdout, str, str_len(str), &done, NULL);
+    write(stdout, str, str_len(str));
 }
 
 INLINE u0 put_sn(char *str) {
     set_stdout();
-    returnif(str == NULL);
     put_s(str);
     put_n();
 }

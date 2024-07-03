@@ -2,12 +2,10 @@
 #include "bint.h"
 #include "put.h"
 #include "dialect.h"
+#include "xplat.h"
 
 
-TUPLE_FUNC({
-               u8 _x;
-               u8 _y;
-           }, function_call)(int x, int y) {
+TUPLE_FUNC({u8 _x; u8 _y;}, function_call)(int x, int y) {
     return (function_call_result) {100, 90};
 }
 
