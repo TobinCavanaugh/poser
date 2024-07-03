@@ -5,7 +5,7 @@
 #ifndef POSER_PUTS_H
 #define POSER_PUTS_H
 
-#include "bint.h"
+#include "../comp/bint.h"
 
 /// Write a string to the stdout
 /// \param str The string

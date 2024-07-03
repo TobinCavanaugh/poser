@@ -4,9 +4,9 @@
 
 #include "put.h"
 #include <windows.h>
-#include "str.h"
-#include "rare.h"
-#include "dialect.h"
+#include "../str/str.h"
+#include "../comp/rare.h"
+#include "../comp/dialect.h"
 
 static u64 stdout = 1;
 

@@ -5,7 +5,7 @@
 #ifndef POSER_STR_H
 #define POSER_STR_H
 
-#include "bint.h"
+#include "../comp/bint.h"
 
 u64 str_len(char * data);
 

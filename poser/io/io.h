@@ -4,6 +4,6 @@
 
 #ifndef POSER_IO_H
 #define POSER_IO_H
-#include "bint.h"
+#include "../comp/bint.h"
 
 #endif //POSER_IO_H

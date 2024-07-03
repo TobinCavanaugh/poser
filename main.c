@@ -1,8 +1,8 @@
-#include "io.h"
-#include "bint.h"
-#include "put.h"
-#include "dialect.h"
-#include "xplat.h"
+#include "poser/io/io.h"
+#include "poser/comp/bint.h"
+#include "poser/io/put.h"
+#include "poser/comp/dialect.h"
+#include "poser/comp/xplat.h"
 
 
 TUPLE_FUNC({u8 _x; u8 _y;}, function_call)(int x, int y) {

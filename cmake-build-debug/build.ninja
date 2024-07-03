@@ -55,17 +55,23 @@ build CMakeFiles/poser.dir/main.c.obj: C_COMPILER__poser_Debug C$:/Users/tobin/C
   OBJECT_DIR = CMakeFiles\poser.dir
   OBJECT_FILE_DIR = CMakeFiles\poser.dir
 
-build CMakeFiles/poser.dir/put.c.obj: C_COMPILER__poser_Debug C$:/Users/tobin/CLionProjects/poser/put.c || cmake_object_order_depends_target_poser
-  DEP_FILE = CMakeFiles\poser.dir\put.c.obj.d
+build CMakeFiles/poser.dir/poser/io/put.c.obj: C_COMPILER__poser_Debug C$:/Users/tobin/CLionProjects/poser/poser/io/put.c || cmake_object_order_depends_target_poser
+  DEP_FILE = CMakeFiles\poser.dir\poser\io\put.c.obj.d
   FLAGS = -g -e entry -nostdlib  -U INLINE -DINLINE=inline -fdiagnostics-color=always -std=gnu90
   OBJECT_DIR = CMakeFiles\poser.dir
-  OBJECT_FILE_DIR = CMakeFiles\poser.dir
+  OBJECT_FILE_DIR = CMakeFiles\poser.dir\poser\io
 
-build CMakeFiles/poser.dir/str.c.obj: C_COMPILER__poser_Debug C$:/Users/tobin/CLionProjects/poser/str.c || cmake_object_order_depends_target_poser
-  DEP_FILE = CMakeFiles\poser.dir\str.c.obj.d
+build CMakeFiles/poser.dir/poser/str/str.c.obj: C_COMPILER__poser_Debug C$:/Users/tobin/CLionProjects/poser/poser/str/str.c || cmake_object_order_depends_target_poser
+  DEP_FILE = CMakeFiles\poser.dir\poser\str\str.c.obj.d
   FLAGS = -g -e entry -nostdlib  -U INLINE -DINLINE=inline -fdiagnostics-color=always -std=gnu90
   OBJECT_DIR = CMakeFiles\poser.dir
-  OBJECT_FILE_DIR = CMakeFiles\poser.dir
+  OBJECT_FILE_DIR = CMakeFiles\poser.dir\poser\str
+
+build CMakeFiles/poser.dir/poser/mem/mem_copy.c.obj: C_COMPILER__poser_Debug C$:/Users/tobin/CLionProjects/poser/poser/mem/mem_copy.c || cmake_object_order_depends_target_poser
+  DEP_FILE = CMakeFiles\poser.dir\poser\mem\mem_copy.c.obj.d
+  FLAGS = -g -e entry -nostdlib  -U INLINE -DINLINE=inline -fdiagnostics-color=always -std=gnu90
+  OBJECT_DIR = CMakeFiles\poser.dir
+  OBJECT_FILE_DIR = CMakeFiles\poser.dir\poser\mem
 
 
 # =============================================================================
@@ -75,7 +81,7 @@ build CMakeFiles/poser.dir/str.c.obj: C_COMPILER__poser_Debug C$:/Users/tobin/CL
 #############################################
 # Link the executable poser.exe
 
-build poser.exe: C_EXECUTABLE_LINKER__poser_Debug CMakeFiles/poser.dir/main.c.obj CMakeFiles/poser.dir/put.c.obj CMakeFiles/poser.dir/str.c.obj
+build poser.exe: C_EXECUTABLE_LINKER__poser_Debug CMakeFiles/poser.dir/main.c.obj CMakeFiles/poser.dir/poser/io/put.c.obj CMakeFiles/poser.dir/poser/str/str.c.obj CMakeFiles/poser.dir/poser/mem/mem_copy.c.obj
   FLAGS = -g -e entry -nostdlib  -U INLINE -DINLINE=inline
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\poser.dir

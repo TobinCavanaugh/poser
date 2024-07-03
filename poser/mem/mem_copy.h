@@ -5,7 +5,7 @@
 #ifndef MEMCOPY_H
 #define MEMCOPY_H
 
-#include "../bint.h"
+#include "../comp/bint.h"
 
 u0 mem_copy(const void *destination, const void *source, u64 len);
 
