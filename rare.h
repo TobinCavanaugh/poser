@@ -11,7 +11,7 @@
 #define rare(condition) condition
 #endif
 
-#if COMPILER == GCC
+#ifdef __builtin_expect
 #define common(condition) __builtin_expect(condition, 1)
 #else
 #define common(condition) condition

@@ -26,7 +26,7 @@ INLINE u0 write(u64 handle, byte *data, u64 len) {
 
 #if OS == WIN
     u64 done = 0;
-    WriteFile((void *) handle, data, len, &done, NULL);
+    WriteFile((void *) handle, data, len, (LPDWORD) &done, NULL);
 #elif OS == LINUX
     //TODO Go to coffee shop and write up the asm for this
     //probably tomorrow (the 3rd)
