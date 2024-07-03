@@ -3,13 +3,14 @@
 //
 
 #include "put.h"
-#include <windows.h>
-#include "../str/str.h"
 #include "../comp/rare.h"
 #include "../comp/dialect.h"
 
-static u64 stdout = 1;
+#if OS == WIN
+#include <windows.h>
+#endif
 
+static u64 stdout = 1;
 
 INLINE u0 set_stdout() {
 #if OS == WIN
@@ -50,3 +51,13 @@ INLINE u0 put_sn(char *str) {
     put_n();
 }
 
+INLINE u0 put_hs(hstr *str) {
+    set_stdout();
+    write(stdout, (byte *) str->char_arr, hstr_len(str));
+}
+
+INLINE u0 put_hsn(hstr * str){
+    set_stdout();
+    write(stdout, (byte *) str->char_arr, hstr_len(str));
+    put_n();
+}

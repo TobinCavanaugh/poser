@@ -6,14 +6,19 @@
 #define POSER_PUTS_H
 
 #include "../comp/bint.h"
+#include "../str/str.h"
 
 /// Write a string to the stdout
 /// \param str The string
 /// \return
-u0 put_s(char *str);
+INLINE u0 put_s(char *str);
 
-u0 put_sn(char *str);
+INLINE u0 put_sn(char *str);
 
-u0 put_n();
+INLINE u0 put_n();
+
+INLINE u0 put_hs(hstr *str);
+
+INLINE u0 put_hsn(hstr * str);
 
 #endif //POSER_PUTS_H

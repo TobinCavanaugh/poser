@@ -48,8 +48,8 @@
 #define WIN 0
 #define LINUX 1
 #define UNIX 2
-#define BSD 3
-#define SOLARIS 4
-#define SOLARIS 4
+#define MAC 3
+#define BSD 4
+#define SOLARIS 5
 
 #endif //POSER_XPLAT_H

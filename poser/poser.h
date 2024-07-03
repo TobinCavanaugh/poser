@@ -8,7 +8,7 @@
 #include "comp/bint.h"
 #include "comp/dialect.h"
 #include "io/io.h"
-#include "mem/mem.h"
+#include "mem/halloc.h"
 #include "mem/mem_copy.h"
 #include "io/put.h"
 #include "comp/rare.h"

@@ -11,4 +11,21 @@ set(CMAKE_C_FLAGS_DEBUG "${CMAKE_C_FLAGS_DEBUG} -U INLINE -DINLINE=inline")
 
 set(CMAKE_C_DIALECT "GNU90")
 
-add_executable(poser main.c poser/io/put.c poser/str/str.c poser/mem/mem_copy.c)
+add_executable(poser main.c
+
+        # /io
+        poser/io/put.c
+
+        # /mem
+        poser/mem/halloc.c
+        poser/mem/mem_copy.c
+        poser/mem/mem_move.c
+
+        # /str
+        poser/str/hstr.c
+        poser/str/str.c
+        poser/str/to_str.c
+
+
+
+        )
