@@ -9,7 +9,7 @@ TUPLE_FUNC({
 
 
 u8 entry() {
-    var z = function_call(20, 30);
+    // var z = function_call(20, 30);
 
     put_hsn(i64_to_hstr(25));
     put_hsn(i64_to_hstr(-25));

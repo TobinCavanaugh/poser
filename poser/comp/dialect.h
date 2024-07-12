@@ -17,7 +17,7 @@
     typedef struct tuple name ## _result ;  \
     name ## _result name
 
-#define var __auto_type
+// #define var __auto_type
 
 /// Performs a convenient conditional return based on the condition. Applies
 /// to u0 functions

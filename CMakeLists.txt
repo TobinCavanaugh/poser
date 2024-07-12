@@ -3,7 +3,11 @@ project(poser C)
 
 set(CMAKE_C_STANDARD 90)
 
-set(CMAKE_C_FLAGS_DEBUG "${CMAKE_C_FLAGS_DEBUG} -e entry -nostdlib ")
+# Set our entry point
+set(CMAKE_C_FLAGS_DEBUG "${CMAKE_C_FLAGS_DEBUG} -e entry ")
+
+# Disable stdlib
+set(CMAKE_C_FLAGS_DEBUG "${CMAKE_C_FLAGS_DEBUG} -nostdlib ")
 
 # Set our INLINE macro. We do this here because CLion formatting hates the inline keyword so the only workaround is this
 # roundabout method. At least it allows inlining to be optional though so (☞ﾟヮﾟ)☞
