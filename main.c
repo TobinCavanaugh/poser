@@ -52,48 +52,39 @@ void ___chkstk_ms(u64 size) {
 // }
 
 u8 entry() {
-    u8 x = 10;
-    x += 10;
-    put_hsn(i64_to_hstr((i64)x));
+    put_hsn(i64_to_hstr(-1238));
+    put_hsn(i64_to_hstr(4214142412238));
+    put_hsn(i64_to_hstr(-1420104104014421));
+    put_hsn(i64_to_hstr(1929465486852383481));
+    put_hsn(i64_to_hstr(0));
+    put_hsn(i64_to_hstr(-0));
+    put_hsn(i64_to_hstr(-1294102948109248124));
+    put_hsn(i64_to_hstr(16));
 
-    //Am i in a parallel universe again? I can't mess with stack memory without
-    //things breaking immediately. Tested with a different project, we hopped
-    //worlds again boys, just like when scoping changed magically... or im an
-    //idiot. remember blender image texture output?
-    // char* tmp = "0123";
-    // char* msg = "4321";
-    // // mem_copy(tmp, msg, 4);
-    // // tmp[0] = msg[0];
-    // tmp[0] = 'a';
-    // put_s(tmp);
+    // put_n();
+    // put_n();
+    // put_n();
+    // put_n();
+    // put_n();
 
-    int i = 15;
-    for (; i > 3; i--)
+    // put_hsn(i64_to_hstr(-1));
+    i64 i = 1;
+    while ((i * 10) > i)
     {
-        ///arggghghghhg... so close
-        // char* set = allocs(i + 1);
+        put_hsn(i64_to_hstr(-1 * i));
+        put_s(" ");
+        put_hsn(i64_to_hstr(i));
 
-        // u8 tmp[i + 1];
-        // char * set = tmp;
-        // u8* set = salloc(i + 1);
-        u8* set = halloc(i + 1);
-        // u8* set = sa(16);
-        // u8* set = halloc(i + 1);
-
-        char* msg = "0123456789012345678901234567890123456789";
-
-        mem_copy(set, msg, i);
-        set[i] = '\0';
-        put_sn(set);
-
-        hfree(set);
+        i *= 10;
     }
 
-    // put_hsn(i64_to_hstr(25));
-    // put_hsn(i64_to_hstr(-25));
-    // put_hsn(i64_to_hstr(-5215));
-    // put_hsn(i64_to_hstr(-765070));
-    // put_hsn(i64_to_hstr(142778421789142));
+    i = 2;
+    while ((i * 2) >= i)
+    {
+        put_hsn(i64_to_hstr(i));
+
+        i *= 2;
+    }
 
     return 0;
 }
