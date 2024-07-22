@@ -4,9 +4,10 @@
 
 #include "str.h"
 
-u64 str_len(char *data) {
+u64 str_len(char* data) {
     int i = 0;
-    while (data[i] != 0) {
+    while (data[i] != 0)
+    {
         ++i;
     }
 

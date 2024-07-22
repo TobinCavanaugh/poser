@@ -7,6 +7,6 @@
 
 #include "../comp/bint.h"
 
-u0 mem_copy(const void *destination, const void *source, u64 len);
+u0 mem_copy(void* destination, void* source, i64 len);
 
 #endif //MEMCOPY_H

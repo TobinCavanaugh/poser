@@ -31,6 +31,8 @@
 
 #include "mem_copy.h"
 
+#include "../io/put.h"
+
 #define MEM_COPY_INSTRUCTION_DEBUG 0
 
 #if MEM_COPY_INSTRUCTION_DEBUG
@@ -39,8 +41,7 @@
 
 #endif
 
-inline void print_instruction_debug_message(char* message)
-{
+inline void print_instruction_debug_message(char* message) {
 #if MEM_COPY_INSTRUCTION_DEBUG
     io_printCs(message);
 #endif
@@ -51,7 +52,7 @@ inline void print_instruction_debug_message(char* message)
 #define PASTE_SEQ(seq) #seq
 
 //Horrifying macro for generating a casting for loop for a sized type.
-#define MEM_COPY_FOR(dest, source, offset, len, type)                        \
+#define MEM_COPY_FOR(dest, source, offset, len, type)                       \
 for(; len >= sizeof(type); len -= sizeof(type)) {                           \
     /*
     Debug printing function, this should get entirely optimized out when
@@ -64,8 +65,7 @@ for(; len >= sizeof(type); len -= sizeof(type)) {                           \
     offset += sizeof(type);                                                 \
 }
 
-u0 mem_copy(const void* destination, const void* source, u64 len)
-{
+u0 mem_copy(void* destination, void* source, i64 len) {
     typedef struct
     {
         u64 _a, _b, _c, _d;
@@ -93,11 +93,37 @@ u0 mem_copy(const void* destination, const void* source, u64 len)
 
     int offset = 0;
 
-    MEM_COPY_FOR(destination, source, offset, len, block1024B);
-    MEM_COPY_FOR(destination, source, offset, len, block512B);
-    MEM_COPY_FOR(destination, source, offset, len, block256B);
-    MEM_COPY_FOR(destination, source, offset, len, block128B);
-    MEM_COPY_FOR(destination, source, offset, len, block32B);
-    MEM_COPY_FOR(destination, source, offset, len, u64);
-    MEM_COPY_FOR(destination, source, offset, len, u8);
+    // MEM_COPY_FOR(destination, source, offset, len, block1024B);
+    // MEM_COPY_FOR(destination, source, offset, len, block512B);
+    // MEM_COPY_FOR(destination, source, offset, len, block256B);
+    // MEM_COPY_FOR(destination, source, offset, len, block128B);
+    // MEM_COPY_FOR(destination, source, offset, len, block32B);
+    // MEM_COPY_FOR(destination, source, offset, len, u64);
+    // MEM_COPY_FOR(destination, source, offset, len, u8);
+    // while (len >= 0)
+    // {
+    // *(u8*)destination++ = *(u8*)source++;
+    // len--;
+    // }
+
+
+    char* d = destination;
+    const char* s = source;
+    while (len--)
+    {
+        *d++ = *s++;
+    }
+
+    // __builtin_memcpy(destination, source, len);
+
+    // i64 ll = len;
+
+    // u64 _tmp = 10;
+    // for(; _tmp > 1; _tmp--)
+    // {
+    // ll -= 1;
+    // hstr * tmp = i64_to_hstr(ll);
+    // put_hsn(tmp);
+    // hstr_free(tmp);
+    // }
 }

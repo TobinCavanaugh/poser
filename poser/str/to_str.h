@@ -9,7 +9,7 @@
 #include "str.h"
 #include "../mem/mem_move.h"
 
-hstr *u64_to_str(u64 val);
+hstr *u64_to_hstr(u64 val);
 
 hstr *i64_to_hstr(i64 val);
 

@@ -14,6 +14,6 @@ CMake Deprecation Warning:
 -- Check for working C compiler: C:/Users/tobin/AppData/Local/Programs/CLion/bin/mingw/bin/gcc.exe - skipped
 -- Detecting C compile features
 -- Detecting C compile features - done
--- Configuring done (2.1s)
+-- Configuring done (0.8s)
 -- Generating done (0.0s)
 -- Build files have been written to: C:/Users/tobin/poser/cmake-build-debug

@@ -14,8 +14,10 @@
 /// @param name : The name of the function. The tuple will be of the type
 /// {name}_result.
 #define TUPLE_FUNC(tuple, name)             \
+    /*@formatter:off : clion directive*/    \
     typedef struct tuple name ## _result ;  \
     name ## _result name
+/*@formatter:on*/
 
 // #define var __auto_type
 

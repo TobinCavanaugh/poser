@@ -19,6 +19,6 @@ INLINE u0 put_n();
 
 INLINE u0 put_hs(hstr *str);
 
-INLINE u0 put_hsn(hstr * str);
+u0 put_hsn(hstr * str);
 
 #endif //POSER_PUTS_H
