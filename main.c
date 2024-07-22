@@ -61,17 +61,11 @@ u8 entry() {
     put_hsn(i64_to_hstr(-1294102948109248124));
     put_hsn(i64_to_hstr(16));
 
-    // put_n();
-    // put_n();
-    // put_n();
-    // put_n();
-    // put_n();
 
-    // put_hsn(i64_to_hstr(-1));
     i64 i = 1;
     while ((i * 10) > i)
     {
-        put_hsn(i64_to_hstr(-1 * i));
+        put_hsn(i64_to_hstr(-i));
         put_s(" ");
         put_hsn(i64_to_hstr(i));
 
@@ -82,7 +76,7 @@ u8 entry() {
     while ((i * 2) >= i)
     {
         put_hsn(i64_to_hstr(i));
-
+        put_hsn(i64_to_hstr(-i));
         i *= 2;
     }
 

@@ -1,0 +1,3 @@
+C:\Users\tobin\AppData\Local\Programs\CLion\bin\cmake\win\x64\bin\cmake.exe -E rm -f CMakeFiles\poser.dir/objects.a
+C:\Users\tobin\AppData\Local\Programs\CLion\bin\mingw\bin\ar.exe qc CMakeFiles\poser.dir/objects.a @CMakeFiles\poser.dir\objects1.rsp
+C:\Users\tobin\AppData\Local\Programs\CLion\bin\mingw\bin\gcc.exe  -e entry  -nostdlib  -g -U INLINE -DINLINE=inline -Wl,--whole-archive CMakeFiles\poser.dir/objects.a -Wl,--no-whole-archive -o poser.exe -Wl,--out-implib,libposer.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\poser.dir\linkLibs.rsp

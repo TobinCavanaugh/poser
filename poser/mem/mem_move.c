@@ -10,9 +10,8 @@
 /// \param src The source pointer
 /// \param size The size of the data
 /// \return
-u0 mem_move(void *dest, void *src, u64 size) {
-
-    u8 *tmp = halloc(size);
+u0 mem_move(void* dest, void* src, u64 size) {
+    u8* tmp = halloc(size);
 
     mem_copy(tmp, src, size);
     mem_copy(dest, tmp, size);

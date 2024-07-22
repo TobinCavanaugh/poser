@@ -32,6 +32,8 @@
 /// @param value : The value to return
 #define returnif_(condition, value) if(condition){ return value; }
 
+typedef char chr;
+
 #define INLINE
 
 #endif //POSER_DIALECT_H

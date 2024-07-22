@@ -50,8 +50,7 @@ static u64 total_heap_allocation = 0;
 
 /// The boblib counterpart to malloc. Performs a heap allocation.
 /// Use hfree to free memory allocated by this
-byte* halloc(u64 size)
-{
+byte* halloc(u64 size) {
 #ifdef MEM_HEAP_USE_CANARY
     //Add some extra size for the canary
     size += sizeof(canary);
@@ -110,8 +109,7 @@ byte* halloc(u64 size)
     return ((u8*)newBlock) + sizeof(heap_block);
 }
 
-heap_block* find_block_of_ptr(void* ptr)
-{
+heap_block* find_block_of_ptr(void* ptr) {
     heap_block* next = &heap_head;
     while (1)
     {
@@ -132,8 +130,7 @@ heap_block* find_block_of_ptr(void* ptr)
 
 /// Frees memory allocated on the heap by mem_halloc()
 /// @param ptr The pointer to the data of the block to be freed.
-u0 hfree(void* ptr)
-{
+u0 hfree(void* ptr) {
     heap_block* block = find_block_of_ptr(ptr);
 
     bassert(block != NULL);
@@ -163,8 +160,7 @@ u0 hfree(void* ptr)
 /// @param ptr The pointer to the heap block data
 /// @param size The size of the reallocation
 /// @return Returning NULL is the failure state, where no state changes
-byte* hrealloc(void* ptr, u64 size)
-{
+byte* hrealloc(void* ptr, u64 size) {
     void* new = halloc(size);
     if (new == NULL)
     {
@@ -184,7 +180,6 @@ byte* hrealloc(void* ptr, u64 size)
 
 /// Get the current amount of heap allocated bytes
 /// @return The amount of bytes
-u64 mem_get_total_heap_alloc()
-{
+u64 mem_get_total_heap_alloc() {
     return total_heap_allocation;
 }

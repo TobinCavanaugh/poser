@@ -5,8 +5,7 @@
 #include "sysinf.h"
 
 
-u64 sys_get_page_size()
-{
+u64 sys_get_page_size() {
     SYSTEM_INFO si;
     GetSystemInfo(&si);
     DWORD pageSize = si.dwPageSize;
