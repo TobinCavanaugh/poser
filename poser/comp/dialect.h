@@ -6,6 +6,33 @@
 #define POSER_DIALECT_H
 
 #include "bint.h"
+#include "bflt.h"
+
+#define true 1
+#define false 0
+
+/// Use u0 as void when its referring to a function returning NOTHING
+/// Do NOT use when referring to a void *
+typedef void u0;
+
+typedef char chr;
+
+#undef NULL
+#define NULL ((void *) 0)
+#define null NULL
+
+#define INLINE
+
+/// Performs a convenient conditional return based on the condition. Applies
+/// to u0 functions
+/// @param condition : The condition to return based on
+#define returnif(condition) if(condition){ return; }
+
+/// Performs a convenient conditional return based on the condition. Applies
+/// to any function, place the return value in the value argument
+/// @param condition : The condition to return based on
+/// @param value : The value to return
+#define returnif_(condition, value) if(condition){ return value; }
 
 /// Define a tuple function. Place the tuple within {}. Commas are not allowed
 /// because C preprocessor is not particularly clever.
@@ -19,44 +46,18 @@
     name ## _result name
 /*@formatter:on*/
 
-// #define var __auto_type
+#define INTERNAL_DEFINE_RESULT(type) typedef struct { u8 success; type value; } result_ ## type;
 
-/// Performs a convenient conditional return based on the condition. Applies
-/// to u0 functions
-/// @param condition : The condition to return based on
-#define returnif(condition) if(condition){ return; }
+INTERNAL_DEFINE_RESULT(i8);
+INTERNAL_DEFINE_RESULT(i32);
+INTERNAL_DEFINE_RESULT(i64);
 
-/// Performs a convenient conditional return based on the condition. Applies
-/// to any function, place the return value in the value argument
-/// @param condition : The condition to return based on
-/// @param value : The value to return
-#define returnif_(condition, value) if(condition){ return value; }
+INTERNAL_DEFINE_RESULT(u8);
+INTERNAL_DEFINE_RESULT(u32);
+INTERNAL_DEFINE_RESULT(u64);
 
-/// Use u0 as void when its referring to a function returning NOTHING
-/// Do NOT use when referring to a void *
-typedef void u0;
-
-typedef char chr;
-
-typedef float f32;
-#define f32_size sizeof(f32) //4
-#define f32_inf (__builtin_inf())
-#define f32_nan (__builtin_nanf())
-
-typedef double f64;
-#define f64_size sizeof(f64) //8
-#define f64_inf (__builtin_inff())
-#define f64_nan (__builtin_nan())
-
-typedef long double f128;
-#define f128_size sizeof(f128); //16
-#define f128_inf (__builtin_infl())
-
-
-#undef NULL
-#define NULL ((void *) 0)
-#define null NULL
-
-#define INLINE
+INTERNAL_DEFINE_RESULT(f32);
+INTERNAL_DEFINE_RESULT(f64);
+INTERNAL_DEFINE_RESULT(f128);
 
 #endif //POSER_DIALECT_H

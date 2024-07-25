@@ -61,6 +61,10 @@ u8 entry() {
     str = $append(str, "aa");
     str = $insert(str, 0, "_");
 
+    f32 _x = f32_nan;
+//    f128 x = f128_nan;
+
+
     put_sn(str);
 
     return 1;
