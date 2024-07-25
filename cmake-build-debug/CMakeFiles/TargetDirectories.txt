@@ -1,3 +1,0 @@
-C:/Users/tobin/CLionProjects/poser/cmake-build-debug/CMakeFiles/poser.dir
-C:/Users/tobin/CLionProjects/poser/cmake-build-debug/CMakeFiles/edit_cache.dir
-C:/Users/tobin/CLionProjects/poser/cmake-build-debug/CMakeFiles/rebuild_cache.dir
