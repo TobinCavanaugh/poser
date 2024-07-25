@@ -13,3 +13,7 @@ u64 str_len(char* data) {
 
     return i;
 }
+u64 str_copy(char *dest, char *src){
+    u64 len = str_len(src);
+    mem_copy(dest, src, len);
+}

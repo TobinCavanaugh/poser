@@ -1,9 +1,13 @@
 #include "poser/poser.h"
 #include "poser/sys/sysinf.h"
 #include "poser/io/put.h"
+#include "poser/sstr/sstr.h"
 
-TUPLE_FUNC({u8 _x; u8 _y;}, function_call)(int x, int y) {
-    return (function_call_result){100, 90};
+TUPLE_FUNC({
+               u8 _x;
+               u8 _y;
+           }, function_call)(int x, int y) {
+    return (function_call_result) {100, 90};
 }
 
 
@@ -52,6 +56,15 @@ void ___chkstk_ms(u64 size) {
 
 u8 entry() {
 
+    $ str = $from("a");
+//    str = $append(str, "aaa");
+    str = $append(str, "aa");
+    str = $insert(str, 0, "_");
+
+    put_sn(str);
+
+    return 1;
+
     //^!!! nan f128
     put_hsn(i64_to_hstr(-1238));
     put_hsn(i64_to_hstr(4214142412238));
@@ -64,8 +77,7 @@ u8 entry() {
 
 
     i64 i = 1;
-    while ((i * 10) > i)
-    {
+    while ((i * 10) > i) {
         put_hsn(i64_to_hstr(-i));
         put_s(" ");
         put_hsn(i64_to_hstr(i));
@@ -74,22 +86,20 @@ u8 entry() {
     }
 
     i = 2;
-    while ((i * 2) >= i)
-    {
+    while ((i * 2) >= i) {
         put_hsn(i64_to_hstr(i));
         put_hsn(i64_to_hstr(-i));
         i *= 2;
     }
 
     f128 x = 1;
-    while (true)
-    {
+    while (true) {
         f128 prev = x;
         ++x;
 
         // if (prev > x || prev ==)
         // {
-            // break;
+        // break;
         // }
     }
 

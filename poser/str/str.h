@@ -9,6 +9,8 @@
 #include "hstr.h"
 #include "to_str.h"
 
-u64 str_len(char * data);
+u64 str_len(char *data);
+
+u64 str_copy(char *dest, char *src);
 
 #endif //POSER_STR_H
