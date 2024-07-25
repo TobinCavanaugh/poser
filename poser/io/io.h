@@ -5,7 +5,7 @@
 #ifndef POSER_IO_H
 #define POSER_IO_H
 
-#include "../comp/bint.h"
+#include "../comp/dialect.h"
 #include "put.h"
 
 #endif //POSER_IO_H

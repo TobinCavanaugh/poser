@@ -5,7 +5,7 @@
 #ifndef POSER_MEM_SET_H
 #define POSER_MEM_SET_H
 
-#include "../comp/bint.h"
+#include "../comp/dialect.h"
 
 u0 mem_set(void * start, u8 data, u64 size);
 

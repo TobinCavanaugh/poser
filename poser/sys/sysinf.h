@@ -6,7 +6,7 @@
 #define SYSINF_H
 
 #include <windows.h>
-#include "../comp/bint.h"
+#include "../comp/dialect.h"
 
 u64 sys_get_page_size();
 
