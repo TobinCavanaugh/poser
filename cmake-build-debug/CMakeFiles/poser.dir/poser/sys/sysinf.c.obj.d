@@ -266,4 +266,6 @@ CMakeFiles/poser.dir/poser/sys/sysinf.c.obj: \
  C:/Users/tobin/AppData/Local/Programs/CLion/bin/mingw/x86_64-w64-mingw32/include/winsvc.h \
  C:/Users/tobin/AppData/Local/Programs/CLion/bin/mingw/x86_64-w64-mingw32/include/mcx.h \
  C:/Users/tobin/AppData/Local/Programs/CLion/bin/mingw/x86_64-w64-mingw32/include/imm.h \
+ C:/Users/tobin/poser/poser/comp/bint.h \
+ C:/Users/tobin/poser/poser/comp/dialect.h \
  C:/Users/tobin/poser/poser/comp/bint.h

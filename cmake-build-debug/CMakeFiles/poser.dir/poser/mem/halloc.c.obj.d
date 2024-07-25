@@ -3,8 +3,9 @@ CMakeFiles/poser.dir/poser/mem/halloc.c.obj: \
  C:\Users\tobin\poser\poser\mem\halloc.h \
  C:\Users\tobin\poser\poser\mem\mem_copy.h \
  C:/Users/tobin/poser/poser/comp/bint.h \
- C:/Users/tobin/poser/poser/comp/bassert.h \
+ C:/Users/tobin/poser/poser/comp/dialect.h \
  C:/Users/tobin/poser/poser/comp/bint.h \
+ C:/Users/tobin/poser/poser/comp/bassert.h \
  C:/Users/tobin/AppData/Local/Programs/CLion/bin/mingw/x86_64-w64-mingw32/include/memoryapi.h \
  C:/Users/tobin/AppData/Local/Programs/CLion/bin/mingw/x86_64-w64-mingw32/include/apiset.h \
  C:/Users/tobin/AppData/Local/Programs/CLion/bin/mingw/x86_64-w64-mingw32/include/_mingw.h \

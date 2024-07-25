@@ -32,7 +32,30 @@
 /// @param value : The value to return
 #define returnif_(condition, value) if(condition){ return value; }
 
+/// Use u0 as void when its referring to a function returning NOTHING
+/// Do NOT use when referring to a void *
+typedef void u0;
+
 typedef char chr;
+
+typedef float f32;
+#define f32_size sizeof(f32) //4
+#define f32_inf (__builtin_inf())
+#define f32_nan (__builtin_nanf())
+
+typedef double f64;
+#define f64_size sizeof(f64) //8
+#define f64_inf (__builtin_inff())
+#define f64_nan (__builtin_nan())
+
+typedef long double f128;
+#define f128_size sizeof(f128); //16
+#define f128_inf (__builtin_infl())
+
+
+#undef NULL
+#define NULL ((void *) 0)
+#define null NULL
 
 #define INLINE
 

@@ -52,6 +52,8 @@ void ___chkstk_ms(u64 size) {
 // }
 
 u8 entry() {
+
+    //^!!! nan f128
     put_hsn(i64_to_hstr(-1238));
     put_hsn(i64_to_hstr(4214142412238));
     put_hsn(i64_to_hstr(-1420104104014421));
@@ -78,6 +80,18 @@ u8 entry() {
         put_hsn(i64_to_hstr(i));
         put_hsn(i64_to_hstr(-i));
         i *= 2;
+    }
+
+    f128 x = 1;
+    while (true)
+    {
+        f128 prev = x;
+        ++x;
+
+        // if (prev > x || prev ==)
+        // {
+            // break;
+        // }
     }
 
     return 0;

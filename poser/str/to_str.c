@@ -5,9 +5,10 @@
 #include "to_str.h"
 
 /// Writes the stringified version of the val into the buf.
-/// @param buf The str, this should be a minimum allocated length of 23
-/// @param val The value to be stringified into the str
-u0 internal_i64_to_buf(chr* buf, i64 val) {
+/// @param buf : The str, this should be a minimum allocated length of
+/// @param val : The value to be stringified into the str
+/// @param digit_count : The count of digits to be calculated (not including nullterm), for u64/i64 use 22.
+u0 internal_i64_to_buf(chr* buf, i64 val, u32 digit_count) {
     //Im lazy and the code doesnt properly not work for zero values,
     //so i implemented this
     if (val == 0)
@@ -17,12 +18,9 @@ u0 internal_i64_to_buf(chr* buf, i64 val) {
         return;
     }
 
-    //TODO implement using stack allocations once optimized
-
-    //Set the buf length to 23 characters.
     //the max of a u64 is 22 digits, and we need an extra for the \0
-    const u8 length = 23;
-    i8 i = 22;
+    const u8 length = digit_count + 1;
+    i8 i = digit_count;
 
     const bool neg = (val < 0);
     if (neg)
@@ -53,7 +51,7 @@ u0 internal_i64_to_buf(chr* buf, i64 val) {
 
 hstr* i64_to_hstr(i64 val) {
     hstr* buf = HSTR("!!!!!!!!!!!!!!!!!!!!!!!");
-    internal_i64_to_buf(buf->char_arr, val);
+    internal_i64_to_buf(buf->char_arr, val, 23);
     hstr_set_end(buf, str_len(buf->char_arr));
 
     return buf;

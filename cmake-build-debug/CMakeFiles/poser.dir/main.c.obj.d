@@ -3,6 +3,7 @@ CMakeFiles/poser.dir/main.c.obj: C:\Users\tobin\poser\main.c \
  C:\Users\tobin\poser\poser/comp/bint.h \
  C:\Users\tobin\poser\poser/comp/dialect.h \
  C:\Users\tobin\poser\poser/comp/bint.h \
+ C:\Users\tobin\poser\poser/comp/dialect.h \
  C:\Users\tobin\poser\poser/io/io.h \
  C:/Users/tobin/poser/poser/comp/bint.h \
  C:\Users\tobin\poser\poser/io/put.h C:/Users/tobin/poser/poser/str/str.h \
