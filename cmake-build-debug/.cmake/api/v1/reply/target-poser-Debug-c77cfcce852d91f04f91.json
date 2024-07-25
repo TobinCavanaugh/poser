@@ -38,7 +38,10 @@
 			"compileCommandFragments" : 
 			[
 				{
-					"fragment" : " -e entry  -nostdlib  -g -U INLINE -DINLINE=inline -std=gnu90 -fdiagnostics-color=always"
+					"fragment" : " -e entry  -nostdlib  -g -U INLINE -DINLINE=inline -fdiagnostics-color=always"
+				},
+				{
+					"fragment" : "-std=gnu90"
 				}
 			],
 			"language" : "C",

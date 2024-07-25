@@ -39,7 +39,7 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "poser::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-poser-Debug-d8915894ef4e33f72874.json",
+					"jsonFile" : "target-poser-Debug-c77cfcce852d91f04f91.json",
 					"name" : "poser",
 					"projectIndex" : 0
 				}
@@ -49,12 +49,12 @@
 	"kind" : "codemodel",
 	"paths" : 
 	{
-		"build" : "C:/Users/tobin/poser/cmake-build-debug",
-		"source" : "C:/Users/tobin/poser"
+		"build" : "C:/Users/tobin/CLionProjects/poser/cmake-build-debug",
+		"source" : "C:/Users/tobin/CLionProjects/poser"
 	},
 	"version" : 
 	{
 		"major" : 2,
-		"minor" : 6
+		"minor" : 4
 	}
 }

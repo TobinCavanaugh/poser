@@ -6,7 +6,6 @@ TUPLE_FUNC({u8 _x; u8 _y;}, function_call)(int x, int y) {
     return (function_call_result){100, 90};
 }
 
-#define salloc(size) ({u8 tmp[size]; tmp;})
 
 // inline u8* sa(int size)
 // {
