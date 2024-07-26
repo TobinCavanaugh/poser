@@ -5,11 +5,13 @@
 #ifndef POSER_COMP_H
 #define POSER_COMP_H
 
+#include "../dialect.h"
 #include "assert.h"
 #include "bflt.h"
 #include "bint.h"
-#include "../dialect.h"
+#include "narg.h"
 #include "rare.h"
-#include "../sys/sys_plat.h"
+#include "va_args.h"
+#include "va_init.h"
 
 #endif //POSER_COMP_H
