@@ -7,6 +7,6 @@
 
 #include "../dialect.h"
 
-void ___chkstk_ms(void);
+u0 ___chkstk_ms(u0);
 
 #endif //POSER____CHKSTK_MS_H

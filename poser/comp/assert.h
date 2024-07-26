@@ -7,13 +7,16 @@
 
 #include "bint.h"
 
+/* TODO to shrink resulting file size, consider having a generic internal assert
+ * function that can be called with args via the assert(n) macros */
+
 #if ENABLE_ASSERTS == 1
 #define BASSERT_PASTE_SEQ(seq) #seq
 #define BASSERT_CAT_SEQ(x, y) x ## y
 
 /// Assert that when not true, prints out the note, the condition and the URL to the file and line
 /// @param cond
-#define bassertn(cond, note) ({                                                                      \
+#define assertn(cond, note) ({                                                                      \
 u8 condVal = (cond);                                                                                 \
 if(!condVal) {                                                                                       \
     put_s("\nAssert Failed ------------------------------------------------------------------");\
@@ -24,7 +27,7 @@ if(!condVal) {                                                                  
     }                                                                                                \
 })
 
-#define bassert(cond) bassertn(cond, "")
+#define assert(cond) assertn(cond, "")
 
 #else
 #define bassert(cond) {}

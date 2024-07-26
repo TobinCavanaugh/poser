@@ -5,7 +5,7 @@
 #include "halloc.h"
 
 #include "mem_copy.h"
-#include "../comp/bassert.h"
+#include "../comp/assert.h"
 
 #if SYS_OS == OS_WIN
 
@@ -141,7 +141,7 @@ u0 hfree(void* ptr) {
         //        memset((u8 *) block + sizeof(heap_block), '-', block->size);
 
 #if HALLOC_USE_CANARY
-        bassertn(*GET_BLOCK_CANARY(block) == canary, "Canary overwritten. This indicates a buffer overflow");
+        assertn(*GET_BLOCK_CANARY(block) == canary, "Canary overwritten. This indicates a buffer overflow");
 #endif
 
         //Prevent wrap around

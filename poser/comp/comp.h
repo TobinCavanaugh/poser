@@ -5,7 +5,7 @@
 #ifndef POSER_COMP_H
 #define POSER_COMP_H
 
-#include "bassert.h"
+#include "assert.h"
 #include "bflt.h"
 #include "bint.h"
 #include "../dialect.h"

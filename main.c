@@ -26,6 +26,7 @@ u8 entry() {
 
     put_sn(str);
 
+    assert(10 == 20);
 
     return 1;
 }

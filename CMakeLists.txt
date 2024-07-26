@@ -6,17 +6,17 @@ set(CMAKE_C_STANDARD 90)
 enable_language(ASM)
 
 # Set our entry point
-#set(CMAKE_C_FLAGS_DEBUG "${CMAKE_C_FLAGS_DEBUG} -e entry ")
+set(CMAKE_C_FLAGS_DEBUG "${CMAKE_C_FLAGS_DEBUG} -e entry ")
 set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -e entry ")
 
 # Disable stdlib
-#set(CMAKE_C_FLAGS_DEBUG "${CMAKE_C_FLAGS_DEBUG} -nostdlib ")
+set(CMAKE_C_FLAGS_DEBUG "${CMAKE_C_FLAGS_DEBUG} -nostdlib ")
 set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -nostdlib ")
 
 # Set our INLINE macro. We do this here because CLion formatting hates the inline keyword so the only workaround is this
 # roundabout method. At least it allows inlining to be optional though so (☞ﾟヮﾟ)☞
 set(CMAKE_C_FLAGS_DEBUG "${CMAKE_C_FLAGS_DEBUG} -U INLINE -DINLINE=inline")
-#set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -U INLINE -DINLINE=inline")
+set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -U INLINE -DINLINE=inline")
 
 #set(CMAKE_C_DIALECT "GNU90")
 

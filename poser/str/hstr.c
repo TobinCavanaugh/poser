@@ -4,7 +4,7 @@
 
 #include "hstr.h"
 
-#include "../comp/bassert.h"
+#include "../comp/assert.h"
 #include "../mem/halloc.h"
 #include "../mem/mem_copy.h"
 #include "str.h"
