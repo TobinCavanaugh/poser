@@ -3,8 +3,6 @@
 //
 
 #include "put.h"
-#include "../comp/rare.h"
-#include "../dialect.h"
 
 #if SYS_OS == OS_WIN
 #include <windows.h>
@@ -12,7 +10,7 @@
 
 static u64 stdout = 1;
 
-INLINE u0 set_stdout() {
+inline u0 set_stdout() {
 #if SYS_OS == OS_WIN
     if (rare(stdout == 1 || stdout == 0)) {
         stdout = (u64) GetStdHandle(STD_OUTPUT_HANDLE);
@@ -59,5 +57,18 @@ INLINE u0 put_hs(hstr *str) {
 INLINE u0 put_hsn(hstr * str){
     set_stdout();
     write(stdout, (byte *) str->char_arr, hstr_len(str));
+    put_n();
+}
+
+INLINE u0 put_i64(i64 val){
+    set_stdout();
+    chr buf[25];
+    i64_into_buf(buf, val);
+    put_s(buf);
+}
+
+INLINE u0 put_i64n(i64 val){
+    set_stdout();
+    put_i64(val);
     put_n();
 }

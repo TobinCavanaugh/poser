@@ -5,6 +5,10 @@
 #ifndef POSER_POSER_H
 #define POSER_POSER_H
 
+/* Settings: */
+#define ENABLE_ASSERTS 1
+#define MEM_HEAP_USE_CANARY 1
+
 /* Compile related headers */
 #include "comp/comp.h"
 
@@ -22,5 +26,6 @@
 
 /* System related headers */
 #include "sys/sys.h"
+
 
 #endif //POSER_POSER_H

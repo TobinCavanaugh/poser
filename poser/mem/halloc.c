@@ -16,7 +16,7 @@
 #include <sys/syscall.h>
 #endif
 
-#if MEM_HEAP_USE_CANARY
+#if HALLOC_USE_CANARY
 
 //Our canary, it can be any data
 #define canary 0x0A
@@ -102,7 +102,7 @@ byte* halloc(u64 size) {
 
     total_heap_allocation += newBlock->size;
 
-#if MEM_HEAP_USE_CANARY
+#if HALLOC_USE_CANARY
     *GET_BLOCK_CANARY(newBlock) = canary;
 #endif
 
@@ -140,7 +140,7 @@ u0 hfree(void* ptr) {
         block->freed = true;
         //        memset((u8 *) block + sizeof(heap_block), '-', block->size);
 
-#if MEM_HEAP_USE_CANARY
+#if HALLOC_USE_CANARY
         bassertn(*GET_BLOCK_CANARY(block) == canary, "Canary overwritten. This indicates a buffer overflow");
 #endif
 
