@@ -7,7 +7,7 @@
 
 #include "hstr.h"
 #include "str.h"
-#include "../comp/dialect.h"
+#include "../dialect.h"
 #include "../mem/mem_move.h"
 
 hstr* u64_to_hstr(u64 val);

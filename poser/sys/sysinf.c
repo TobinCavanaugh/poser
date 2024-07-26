@@ -2,7 +2,7 @@
 // Created by tobin on 2024-07-21.
 //
 
-#include "sysinf.h"
+#include "sys_inf.h"
 
 
 u64 sys_get_page_size() {

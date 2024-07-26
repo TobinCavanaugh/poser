@@ -5,7 +5,7 @@
 #ifndef POSER_STR_H
 #define POSER_STR_H
 
-#include "../comp/dialect.h"
+#include "../dialect.h"
 #include "hstr.h"
 #include "to_str.h"
 

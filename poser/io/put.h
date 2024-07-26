@@ -5,7 +5,7 @@
 #ifndef POSER_PUTS_H
 #define POSER_PUTS_H
 
-#include "../comp/dialect.h"
+#include "../dialect.h"
 #include "../str/str.h"
 
 /// Write a string to the stdout

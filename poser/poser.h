@@ -5,14 +5,22 @@
 #ifndef POSER_POSER_H
 #define POSER_POSER_H
 
-#include "comp/bint.h"
-#include "comp/dialect.h"
+/* Compile related headers */
+#include "comp/comp.h"
+
+/* IO related headers*/
 #include "io/io.h"
-#include "mem/halloc.h"
-#include "mem/mem_copy.h"
-#include "io/put.h"
-#include "comp/rare.h"
+
+/* Memory related headers*/
+#include "mem/mem.h"
+
+/* Stack String header*/
+#include "sstr/sstr.h"
+
+/* String related headers */
 #include "str/str.h"
-#include "comp/xplat.h"
+
+/* System related headers */
+#include "sys/sys.h"
 
 #endif //POSER_POSER_H

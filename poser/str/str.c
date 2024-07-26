@@ -15,5 +15,5 @@ u64 str_len(char* data) {
 }
 u64 str_copy(char *dest, char *src){
     u64 len = str_len(src);
-    mem_copy(dest, src, len);
+    mem_copy(dest, src, len + 1);
 }

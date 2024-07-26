@@ -3,6 +3,8 @@ project(poser C)
 
 set(CMAKE_C_STANDARD 90)
 
+enable_language(ASM)
+
 # Set our entry point
 #set(CMAKE_C_FLAGS_DEBUG "${CMAKE_C_FLAGS_DEBUG} -e entry ")
 set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -e entry ")
@@ -18,7 +20,7 @@ set(CMAKE_C_FLAGS_DEBUG "${CMAKE_C_FLAGS_DEBUG} -U INLINE -DINLINE=inline")
 
 #set(CMAKE_C_DIALECT "GNU90")
 
-add_executable(poser
+add_executable(${PROJECT_NAME}
 
         main.c
 
@@ -37,4 +39,8 @@ add_executable(poser
         poser/str/to_str.c
         poser/sys/sysinf.c
 
-)
+        poser/sys/sys_exit.c poser/sys/___chkstk_ms.c)
+
+if (WIN32)
+    target_link_libraries(${PROJECT_NAME} PRIVATE kernel32)
+endif ()

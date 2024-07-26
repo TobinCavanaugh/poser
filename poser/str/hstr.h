@@ -5,7 +5,7 @@
 #ifndef BOBLIB_hstr_H
 #define BOBLIB_hstr_H
 
-#include "../comp/dialect.h"
+#include "../dialect.h"
 
 typedef struct
 {

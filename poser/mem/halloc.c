@@ -7,7 +7,7 @@
 #include "mem_copy.h"
 #include "../comp/bassert.h"
 
-#if OS == WIN
+#if SYS_OS == OS_WIN
 
 #include <memoryapi.h>
 

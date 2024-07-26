@@ -2,8 +2,8 @@
 // Created by tobin on 7/2/2024.
 //
 
-#ifndef POSER_XPLAT_H
-#define POSER_XPLAT_H
+#ifndef POSER_SYS_PLAT_H
+#define POSER_SYS_PLAT_H
 
 
 #ifdef __GNUC__
@@ -28,28 +28,22 @@
 #define UNKNOWN_COMPILER 255
 
 
-#ifdef WIN64
-#define OS WIN
-#elif WIN32
-#define OS WIN
-#elif WINNT
-#define OS WIN
-#elif _LINUX
-#elif UNIX
-#define OS IX
-#elif _MACOS
-#define OS MAC
-#elif _BSD
-#define OS BSD
-#elif _SOLARIS
-#define OS SOLARIS
+#define OS_WIN 1
+#define OS_LINUX 2
+#define OS_MACOS 3
+#define OS_SOLARIS 4
+
+#ifdef _WIN32
+#define SYS_OS OS_WIN
+#elif defined(_WIN64)
+#define SYS_OS OS_WIN
+#elif defined(__linux__)
+#define SYS_OS OS_LINUX
+#elif defined(__APPLE__ )
+#define SYS_OS OS_MACOS
+#elif defined(__sun)
+#define SYS_OS OS_SOLARIS
 #endif
 
-#define WIN 0
-#define LINUX 1
-#define UNIX 2
-#define MAC 3
-#define BSD 4
-#define SOLARIS 5
 
-#endif //POSER_XPLAT_H
+#endif //POSER_SYS_PLAT_H

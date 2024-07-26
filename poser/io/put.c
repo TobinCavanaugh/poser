@@ -4,16 +4,16 @@
 
 #include "put.h"
 #include "../comp/rare.h"
-#include "../comp/dialect.h"
+#include "../dialect.h"
 
-#if OS == WIN
+#if SYS_OS == OS_WIN
 #include <windows.h>
 #endif
 
 static u64 stdout = 1;
 
 INLINE u0 set_stdout() {
-#if OS == WIN
+#if SYS_OS == OS_WIN
     if (rare(stdout == 1 || stdout == 0)) {
         stdout = (u64) GetStdHandle(STD_OUTPUT_HANDLE);
     }
@@ -25,10 +25,10 @@ INLINE u0 write(u64 handle, byte *data, u64 len) {
     returnif(rare(data == NULL));
     returnif(rare(len == 0));
 
-#if OS == WIN
+#if SYS_OS == OS_WIN
     u64 done = 0;
     WriteFile((void *) handle, data, len, (LPDWORD) &done, NULL);
-#elif OS == LINUX
+#elif SYS_OS == OS_LINUX
     //TODO Go to coffee shop and write up the asm for this
     //probably tomorrow (the 3rd)
 #endif

@@ -5,8 +5,8 @@
 #ifndef POSER_DIALECT_H
 #define POSER_DIALECT_H
 
-#include "bint.h"
-#include "bflt.h"
+#include "comp/bint.h"
+#include "comp/bflt.h"
 
 #define true 1
 #define false 0
