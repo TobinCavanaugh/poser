@@ -1,10 +1,4 @@
-#include "poser/sys/sys_plat.h"
 #include "poser/poser.h"
-#include "poser/sys/sys_inf.h"
-#include "poser/io/put.h"
-#include "poser/sstr/sstr.h"
-#include "poser/mem/mem_set.h"
-#include "poser/sys/sys_exit.h"
 
 TUPLE_FUNC({
                u8 _x;

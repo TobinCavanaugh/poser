@@ -37,7 +37,7 @@ add_executable(${PROJECT_NAME}
         poser/str/hstr.c
         poser/str/str.c
         poser/str/to_str.c
-        poser/sys/sysinf.c
+        poser/sys/sys_inf.c
 
         poser/sys/sys_exit.c poser/sys/___chkstk_ms.c)
 
