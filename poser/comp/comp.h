@@ -9,7 +9,7 @@
 #include "assert.h"
 #include "bflt.h"
 #include "bint.h"
-#include "narg.h"
+#include "count_args.h"
 #include "rare.h"
 #include "va_args.h"
 #include "va_init.h"

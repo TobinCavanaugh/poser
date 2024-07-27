@@ -11,7 +11,7 @@
 #include "sys_exit.h"
 #include "sys_plat.h"
 
-void sys_exit(u64 code) {
+u0 sys_exit(u64 code) {
 
 #if SYS_OS == OS_WIN
     ExitProcess(code);

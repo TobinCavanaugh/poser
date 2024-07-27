@@ -7,6 +7,6 @@
 
 #include "../dialect.h"
 
-void sys_exit(u64 code);
+u0 sys_exit(u64 code);
 
 #endif //POSER_SYS_EXIT_H

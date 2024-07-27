@@ -11,17 +11,22 @@
 #define true 1
 #define false 0
 
+
 /// Use u0 as void when its referring to a function returning NOTHING
 /// Do NOT use when referring to a void *
 typedef void u0;
 
-typedef char chr;
+typedef char unsigned chr;
+
+#define POSER_API __attribute__((unused))
+
+POSER_API u8 entry();
 
 #undef NULL
 #define NULL ((void *) 0)
 #define null NULL
 
-#define INLINE
+//#define INLINE
 
 /// Performs a convenient conditional return based on the condition. Applies
 /// to u0 functions
@@ -43,10 +48,10 @@ typedef char chr;
 #define TUPLE_FUNC(tuple, name)             \
     /*@formatter:off : clion directive*/    \
     typedef struct tuple name ## _result ;  \
-    name ## _result name
-/*@formatter:on*/
+    name ## _result name /*@formatter:on : clion directive*/
 
-#define INTERNAL_DEFINE_RESULT(type) typedef struct { u8 success; type value; } result_ ## type;
+#define INTERNAL_DEFINE_RESULT(type)                            \
+    typedef struct { u8 success; type value; } result_ ## type;
 
 INTERNAL_DEFINE_RESULT(i8);
 INTERNAL_DEFINE_RESULT(i32);

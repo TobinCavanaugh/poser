@@ -16,4 +16,6 @@ hstr* i64_to_hstr(i64 val);
 
 u0 i64_into_buf(chr* buf, i64 val);
 
+u0 u64_into_buf(chr *buf, u64 val);
+
 #endif //POSER_TO_STR_H

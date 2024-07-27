@@ -12,17 +12,22 @@
 /// Write a string to the stdout
 /// \param str The string
 /// \return
-INLINE u0 put_s(char *str);
+POSER_API INLINE u0 put_s(char *str);
 
-INLINE u0 put_sn(char *str);
+POSER_API INLINE u0 put_sn(char *str);
 
-INLINE u0 put_n();
+POSER_API INLINE u0 put_n();
 
-INLINE u0 put_hs(hstr *str);
+POSER_API INLINE u0 put_hs(hstr *str);
 
-INLINE u0 put_hsn(hstr * str);
+POSER_API INLINE u0 put_hsn(hstr *str);
 
-INLINE u0 put_i64(i64 val);
+POSER_API INLINE u0 put_i64(i64 val);
 
+POSER_API INLINE u0 put_i64n(i64 val);
+
+POSER_API INLINE u0 put_u64(u64 val);
+
+POSER_API INLINE u0 put_u64n(u64 val);
 
 #endif //POSER_PUTS_H

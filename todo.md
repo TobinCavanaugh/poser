@@ -1,11 +1,20 @@
 #### Poser todo
 
 Current todo (🔽 Priority):
-- [ ] : Variadic args
+- [ ] : pull in fstr, maybe rename to hstr?
 - [ ] : put_f() for putting with a format
 - [ ] : Nail down proper naming scheme, things are a bit fragmented atm
 - [ ] : Cross platform cpu feature getting, AVX, etc.
 
+---
+
+#### 2024-07-27:
+- [X] : Variadic args
+
+Properly implemented varargs, va_init is pretty dope & convenient so that's
+cool. Also added proper u64 to string support, it's kinda sketchy cuz im just
+copying the i64 function but removed any negative related stuff, but I've had
+no issues with it thus far.
 
 ---
 
