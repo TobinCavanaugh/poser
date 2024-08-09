@@ -10,9 +10,9 @@
 #include "../dialect.h"
 #include "../mem/mem_move.h"
 
-hstr* u64_to_hstr(u64 val);
+hstr_t* u64_to_hstr(u64 val);
 
-hstr* i64_to_hstr(i64 val);
+hstr_t* i64_to_hstr(i64 val);
 
 u0 i64_into_buf(chr* buf, i64 val);
 

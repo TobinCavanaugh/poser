@@ -5,6 +5,9 @@
 #include "str.h"
 
 u64 str_len(char* data) {
+
+    returnif_(data == null, 0)
+
     int i = 0;
     while (data[i] != 0)
     {

@@ -1,10 +1,11 @@
 #include "poser/poser.h"
+#include "poser/sys/sleep.h"
 
 #define IDE_F_ON /*@formatter:on : clion directive*/
 #define IDE_F_OFF /*@formatter:off : clion directive*/
 
 TUPLE_FUNC({ u8 _x; u8 _y; }, function_call)(int x, int y) {
-    return (function_call_result) {100, 90};
+    return (function_call_result_t) {100, 90};
 }
 
 /* Requirements for put_f:
@@ -31,12 +32,29 @@ u8 _test(int count, ...) {
 
 //#define ifor(varname, max, code) u64 varname = 0; for(; varname < max; varname++) { code; }
 
-u8 entry() {
+atomic int y = 0;
 
-    test(5, 1, 2, 3, 4, 5);
-    put_n();
-    test(2, 9, 8, 7, 6, 5, 7, 12, 67);
-    put_n();
+u32 print(){
+    sleep_us(1000 * 1000);
+    y = 1;
+    put_s("aaa");
+}
+
+u8 entry() {
+    put_s("...\n");
+    thread_t x = thread_create((u32 (*)(void *)) print, NULL);
+
+
+    while(!y){
+//        put_s(".");
+    }
+
+//    put_n();
+//
+//    test(5, 1, 2, 3, 4, 5);
+//    put_n();
+//    test(2, 9, 8, 7, 6, 5, 7, 12, 67);
+//    put_n();
 
     return 1;
 }

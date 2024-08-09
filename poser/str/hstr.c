@@ -11,7 +11,7 @@
 
 /* NOTES:
  * DESIGN ====================================================================
- * This could all be handled using hstr
+ * This could all be handled using hstr_t
  * TODO ======================================================================
  * Implementing chunked strings into this would be nice
  */
@@ -25,18 +25,18 @@ u64 internal_C_strlen(char *data) {
 }
 
 
-u0 hstr_set_end(hstr *str, u64 len) {
+u0 hstr_set_end(hstr_t *str, u64 len) {
     bassert(str->char_arr != NULL);
     str->end_ptr = str->char_arr + len;
     bassert(str->end_ptr != NULL);
 }
 
-u64 hstr_len(hstr *str) {
+u64 hstr_len(hstr_t *str) {
     bassert(str->char_arr <= str->end_ptr);
     return ((u64) str->end_ptr - (u64) &str->char_arr[0]);
 }
 
-u0 internal_hstr_append(hstr *base, char *buf, u64 bufLen) {
+u0 internal_hstr_append(hstr_t *base, char *buf, u64 bufLen) {
     if (bufLen == 0) {
         return;
     }
@@ -47,33 +47,33 @@ u0 internal_hstr_append(hstr *base, char *buf, u64 bufLen) {
     hstr_set_end(base, baseStartLen + bufLen);
 }
 
-u0 hstr_append(hstr *base, hstr *buf) {
+u0 hstr_append(hstr_t *base, hstr_t *buf) {
     internal_hstr_append(base, buf->char_arr, hstr_len(buf));
 }
 
-u0 hstr_appendCs(hstr *base, char *buf) {
+u0 hstr_appendCs(hstr_t *base, char *buf) {
     internal_hstr_append(base, buf, internal_C_strlen(buf));
 }
 
-u0 hstr_appendu64(hstr *base, u64 value) {
-    hstr *buf = i64_to_hstr(value);
+u0 hstr_appendu64(hstr_t *base, u64 value) {
+    hstr_t *buf = i64_to_hstr(value);
     hstr_append(base, buf);
     hfree(buf);
 }
 
-u0 hstr_appendi64(hstr *base, i64 value) {
-    hstr *buf = i64_to_hstr(value);
+u0 hstr_appendi64(hstr_t *base, i64 value) {
+    hstr_t *buf = i64_to_hstr(value);
     hstr_append(base, buf);
     hfree(buf);
 }
 
-u0 hstr_free(hstr *str) {
+u0 hstr_free(hstr_t *str) {
     hfree(str->char_arr);
     hfree(str);
 }
 
-hstr *hstr_fromCs(char *source) {
-    hstr *str = halloc(sizeof(hstr));
+hstr_t *hstr_fromCs(char *source) {
+    hstr_t *str = halloc(sizeof(hstr_t));
     u64 len = internal_C_strlen(source);
     str->char_arr = halloc(len);
 

@@ -14,7 +14,8 @@
 
 /// Use u0 as void when its referring to a function returning NOTHING
 /// Do NOT use when referring to a void *
-typedef void u0;
+//typedef void u0;
+#define u0 void
 
 typedef char unsigned chr;
 
@@ -27,6 +28,8 @@ POSER_API u8 entry();
 #define null NULL
 
 //#define INLINE
+
+#define atomic _Atomic
 
 /// Performs a convenient conditional return based on the condition. Applies
 /// to u0 functions
@@ -45,13 +48,13 @@ POSER_API u8 entry();
 /// is defined the same as in structs.
 /// @param name : The name of the function. The tuple will be of the type
 /// {name}_result.
-#define TUPLE_FUNC(tuple, name)             \
-    /*@formatter:off : clion directive*/    \
-    typedef struct tuple name ## _result ;  \
-    name ## _result name /*@formatter:on : clion directive*/
+#define TUPLE_FUNC(tuple, name)                                \
+    /*@formatter:off : clion directive*/                       \
+    typedef struct tuple name ## _result_t ;                   \
+    name ## _result_t name /*@formatter:on : clion directive*/
 
-#define INTERNAL_DEFINE_RESULT(type)                            \
-    typedef struct { u8 success; type value; } result_ ## type;
+#define INTERNAL_DEFINE_RESULT(type)                                  \
+    typedef struct { u8 success; type value; } result_ ## type ## _t;
 
 INTERNAL_DEFINE_RESULT(i8);
 INTERNAL_DEFINE_RESULT(i32);

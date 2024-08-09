@@ -78,37 +78,37 @@ u0 mem_copy(const void* destination, const void* source, i64 len) {
     typedef struct
     {
         u64 _a, _b, _c, _d;
-    } mem_copy_block32B;
+    } mem_copy_block32B_t;
 
     typedef struct
     {
-        mem_copy_block32B _a, _b, _c, _d;
-    } mem_copy_block128B;
+        mem_copy_block32B_t _a, _b, _c, _d;
+    } mem_copy_block128B_t;
 
     typedef struct
     {
-        mem_copy_block128B _a, _b;
-    } mem_copy_block256B;
+        mem_copy_block128B_t _a, _b;
+    } mem_copy_block256B_t;
 
     typedef struct
     {
-        mem_copy_block256B _a, _b;
-    } mem_copy_block512B;
+        mem_copy_block256B_t _a, _b;
+    } mem_copy_block512B_t;
 
     typedef struct //1KB
     {
-        mem_copy_block256B _a, _b, _c, _d;
-    } mem_copy_block1024B;
+        mem_copy_block256B_t _a, _b, _c, _d;
+    } mem_copy_block1024B_t;
     //TODO look into >= MB copying structs... not sure if with it
 
 
     int offset = 0;
 
-    INTERNAL_MEM_COPY_FOR(destination, source, offset, len, mem_copy_block1024B);
-    INTERNAL_MEM_COPY_FOR(destination, source, offset, len, mem_copy_block512B);
-    INTERNAL_MEM_COPY_FOR(destination, source, offset, len, mem_copy_block256B);
-    INTERNAL_MEM_COPY_FOR(destination, source, offset, len, mem_copy_block128B);
-    INTERNAL_MEM_COPY_FOR(destination, source, offset, len, mem_copy_block32B);
+    INTERNAL_MEM_COPY_FOR(destination, source, offset, len, mem_copy_block1024B_t);
+    INTERNAL_MEM_COPY_FOR(destination, source, offset, len, mem_copy_block512B_t);
+    INTERNAL_MEM_COPY_FOR(destination, source, offset, len, mem_copy_block256B_t);
+    INTERNAL_MEM_COPY_FOR(destination, source, offset, len, mem_copy_block128B_t);
+    INTERNAL_MEM_COPY_FOR(destination, source, offset, len, mem_copy_block32B_t);
     INTERNAL_MEM_COPY_FOR(destination, source, offset, len, u64);
     INTERNAL_MEM_COPY_FOR(destination, source, offset, len, u8);
 #endif

@@ -22,7 +22,7 @@
 #define canary 0x0A
 
 //Macro for finding the canary of the block
-#define GET_BLOCK_CANARY(newBlock) ((typeof(canary) *) ((u8 *) newBlock + sizeof(heap_block) + newBlock->size))
+#define GET_BLOCK_CANARY(newBlock) ((typeof(canary) *) ((u8 *) newBlock + sizeof(heap_block_t) + newBlock->size))
 
 #else
 
@@ -33,13 +33,13 @@
 /// This datastructure handles our freed heap blocks
 typedef struct heap_block
 {
-    struct heap_block* next;
+    struct heap_block_t* next;
     u64 size;
     u8 freed;
-} heap_block;
+} heap_block_t;
 
 /// The start of our heap blocks
-static heap_block heap_head = {0};
+static heap_block_t heap_head = {0};
 
 /// The alignment of our memory, this aligns to 16B boundaries
 static const u64 alignment = 16;
@@ -60,8 +60,8 @@ byte* halloc(u64 size) {
     //https://stackoverflow.com/a/5422447/21769995
     size = (size + u64_size + (alignment - 1)) & ~(alignment - 1);
 
-    heap_block* next = heap_head.next;
-    heap_block* last = &heap_head;
+    heap_block_t* next = heap_head.next;
+    heap_block_t* last = &heap_head;
 
     //Try and find an open block
     while (next != null)
@@ -70,7 +70,7 @@ byte* halloc(u64 size) {
         {
             //Use this memory
             next->freed = false;
-            return ((u8*)next) + sizeof(heap_block);
+            return ((u8*)next) + sizeof(heap_block_t);
         }
 
         if (next != null)
@@ -81,13 +81,13 @@ byte* halloc(u64 size) {
     }
 
     //No open blocks
-    heap_block* newBlock;
+    heap_block_t* newBlock;
 
     //TODO This is not ideal afaik
 #if SYSTEM_OS == OS_WIN
     newBlock = VirtualAlloc(NULL, size, MEM_COMMIT | MEM_RESERVE, PAGE_READWRITE);
 #elif
-    newBlock = (heap_block*) sbrk(size);
+    newBlock = (heap_block_t*) sbrk(size);
 #endif
 
     if (newBlock == NULL)
@@ -106,15 +106,15 @@ byte* halloc(u64 size) {
     *GET_BLOCK_CANARY(newBlock) = canary;
 #endif
 
-    return ((u8*)newBlock) + sizeof(heap_block);
+    return ((u8*)newBlock) + sizeof(heap_block_t);
 }
 
-heap_block* find_block_of_ptr(void* ptr) {
-    heap_block* next = &heap_head;
+heap_block_t* find_block_of_ptr(void* ptr) {
+    heap_block_t* next = &heap_head;
     while (1)
     {
         //If our pointer is within that heap block
-        if ((u64)next <= (u64)ptr && (u64)next + sizeof(heap_block) + next->size >= (u64)ptr)
+        if ((u64)next <= (u64)ptr && (u64)next + sizeof(heap_block_t) + next->size >= (u64)ptr)
         {
             return next;
         }
@@ -131,14 +131,14 @@ heap_block* find_block_of_ptr(void* ptr) {
 /// Frees memory allocated on the heap by mem_halloc()
 /// @param ptr The pointer to the data of the block to be freed.
 u0 hfree(void* ptr) {
-    heap_block* block = find_block_of_ptr(ptr);
+    heap_block_t* block = find_block_of_ptr(ptr);
 
     bassert(block != NULL);
 
     if (block != NULL)
     {
         block->freed = true;
-        //        memset((u8 *) block + sizeof(heap_block), '-', block->size);
+        //        memset((u8 *) block + sizeof(heap_block_t), '-', block->size);
 
 #if HALLOC_USE_CANARY
         assertn(*GET_BLOCK_CANARY(block) == canary, "Canary overwritten. This indicates a buffer overflow");
@@ -167,7 +167,7 @@ byte* hrealloc(void* ptr, u64 size) {
         return NULL;
     }
 
-    heap_block* current = find_block_of_ptr(ptr);
+    heap_block_t* current = find_block_of_ptr(ptr);
 
     bassert(current != NULL);
 

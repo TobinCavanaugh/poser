@@ -39,7 +39,11 @@ add_executable(${PROJECT_NAME}
         poser/str/to_str.c
         poser/sys/sys_inf.c
 
-        poser/sys/sys_exit.c poser/sys/___chkstk_ms.c)
+        poser/sys/sys_exit.c
+        poser/sys/___chkstk_ms.c
+
+        # /thrd
+        poser/thrd/mutex.c poser/thrd/thread.c poser/sys/sleep.c)
 
 if (WIN32)
     target_link_libraries(${PROJECT_NAME} PRIVATE kernel32)

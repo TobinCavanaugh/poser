@@ -74,8 +74,8 @@ u0 u64_into_buf(chr *buf, u64 val) {
 
 #define BUF_SIZE_INTERNAL_23  "!!!!!!!!!!!!!!!!!!!!!!!"
 
-hstr *i64_to_hstr(i64 val) {
-    hstr *buf = HSTR(BUF_SIZE_INTERNAL_23);
+hstr_t *i64_to_hstr(i64 val) {
+    hstr_t *buf = HSTR(BUF_SIZE_INTERNAL_23);
     i64_into_buf(buf->char_arr, val);
     hstr_set_end(buf, str_len(buf->char_arr));
 
@@ -83,8 +83,8 @@ hstr *i64_to_hstr(i64 val) {
 }
 
 
-hstr *u64_to_hstr(u64 val) {
-    hstr *buf = HSTR(BUF_SIZE_INTERNAL_23);
+hstr_t *u64_to_hstr(u64 val) {
+    hstr_t *buf = HSTR(BUF_SIZE_INTERNAL_23);
     u64_into_buf(buf->char_arr, val);
     hstr_set_end(buf, str_len(buf->char_arr));
 

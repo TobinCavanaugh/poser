@@ -1,7 +1,7 @@
 #### Poser todo
 
 Current todo (🔽 Priority):
-- [ ] : pull in fstr, maybe rename to hstr?
+- [ ] : pull in fstr, maybe rename to hstr_t?
 - [ ] : put_f() for putting with a format
 - [ ] : Nail down proper naming scheme, things are a bit fragmented atm
 - [ ] : Cross platform cpu feature getting, AVX, etc.

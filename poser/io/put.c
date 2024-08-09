@@ -51,12 +51,12 @@ POSER_API INLINE u0 put_sn(char *str) {
     put_n();
 }
 
-POSER_API INLINE u0 put_hs(hstr *str) {
+POSER_API INLINE u0 put_hs(hstr_t *str) {
     set_stdout();
     write(stdout, (byte *) str->char_arr, hstr_len(str));
 }
 
-POSER_API INLINE u0 put_hsn(hstr *str) {
+POSER_API INLINE u0 put_hsn(hstr_t *str) {
     set_stdout();
     write(stdout, (byte *) str->char_arr, hstr_len(str));
     put_n();

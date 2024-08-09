@@ -28,4 +28,7 @@
 #include "sys/sys.h"
 
 
+#include "thrd/thread.h"
+
+
 #endif //POSER_POSER_H

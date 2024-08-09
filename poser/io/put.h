@@ -8,6 +8,7 @@
 #include "../dialect.h"
 #include "../str/str.h"
 #include "../comp/rare.h"
+#include "put_f.h"
 
 /// Write a string to the stdout
 /// \param str The string
@@ -18,9 +19,9 @@ POSER_API INLINE u0 put_sn(char *str);
 
 POSER_API INLINE u0 put_n();
 
-POSER_API INLINE u0 put_hs(hstr *str);
+POSER_API INLINE u0 put_hs(hstr_t *str);
 
-POSER_API INLINE u0 put_hsn(hstr *str);
+POSER_API INLINE u0 put_hsn(hstr_t *str);
 
 POSER_API INLINE u0 put_i64(i64 val);
 
