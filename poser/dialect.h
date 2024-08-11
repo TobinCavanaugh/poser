@@ -31,6 +31,9 @@ POSER_API u8 entry();
 
 #define atomic _Atomic
 
+// CLION FORMATTING : /*@formatter:off*/
+// CLION FORMATTING : /*@formatter:on */
+
 /// Performs a convenient conditional return based on the condition. Applies
 /// to u0 functions
 /// @param condition : The condition to return based on
