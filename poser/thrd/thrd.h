@@ -5,8 +5,7 @@
 #ifndef POSER_THRD_H
 #define POSER_THRD_H
 
-#include "mutex.h"
-
 #include "thread.h"
+#include "spinlock.h"
 
 #endif //POSER_THRD_H

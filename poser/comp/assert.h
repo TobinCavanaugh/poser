@@ -2,8 +2,8 @@
 // Created by TobinC on 6/4/2024.
 //
 
-#ifndef BASSERT_H
-#define BASSERT_H
+#ifndef ASSERT_H
+#define ASSERT_H
 
 #include "bint.h"
 
@@ -11,8 +11,8 @@
  * function that can be called with args via the assert(n) macros */
 
 #if ENABLE_ASSERTS == 1
-#define BASSERT_PASTE_SEQ(seq) #seq
-#define BASSERT_CAT_SEQ(x, y) x ## y
+#define ASSERT_PASTE_SEQ(seq) #seq
+#define assert_CAT_SEQ(x, y) x ## y
 
 /// Assert that when not true, prints out the note, the condition and the URL to the file and line
 /// @param cond
@@ -21,7 +21,7 @@ u8 condVal = (cond);                                                            
 if(!condVal) {                                                                                       \
     put_s("\nAssert Failed ------------------------------------------------------------------");\
     put_s("\n\t- Note : ["); put_s(note); put_s("]");                                 \
-    put_s("\n\t- Condition : `" BASSERT_PASTE_SEQ(cond) "` is not true. ");                             \
+    put_s("\n\t- Condition : `" ASSERT_PASTE_SEQ(cond) "` is not true. ");                             \
     put_s("\n\t- "); put_s(__FILE__); put_s(":"); put_i64(__LINE__);              \
     sys_exit(10);                                                                                       \
     }                                                                                                \
@@ -30,8 +30,8 @@ if(!condVal) {                                                                  
 #define assert(cond) assertn(cond, "")
 
 #else
-#define bassert(cond) {}
+#define assert(cond) {}
 #endif
 
 
-#endif //BASSERT_H
+#endif //ASSERT_H

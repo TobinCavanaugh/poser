@@ -10,12 +10,18 @@
 
 #endif
 
-static u64 stdout = 1;
+static u64 stdout_handle = 1;
+
+u64 get_stdout_handle() {
+#if SYS_OS == OS_WIN
+    return (u64) GetStdHandle(STD_OUTPUT_HANDLE);
+#endif
+}
 
 POSER_API INLINE u0 set_stdout() {
 #if SYS_OS == OS_WIN
-    if (rare(stdout == 1 || stdout == 0)) {
-        stdout = (u64) GetStdHandle(STD_OUTPUT_HANDLE);
+    if (rare(stdout_handle == 1 || stdout_handle == 0)) {
+        stdout_handle = (u64) GetStdHandle(STD_OUTPUT_HANDLE);
     }
 #endif
 }
@@ -37,12 +43,12 @@ POSER_API INLINE u0 write(u64 handle, byte *data, u64 len) {
 
 POSER_API INLINE u0 put_n() {
     set_stdout();
-    write(stdout, (u8*) "\n", 1);
+    write(stdout_handle, (u8 *) "\n", 1);
 }
 
 POSER_API INLINE u0 put_s(char *str) {
     set_stdout();
-    write(stdout, str, str_len(str));
+    write(stdout_handle, str, str_len(str));
 }
 
 POSER_API INLINE u0 put_sn(char *str) {
@@ -53,12 +59,12 @@ POSER_API INLINE u0 put_sn(char *str) {
 
 POSER_API INLINE u0 put_hs(hstr_t *str) {
     set_stdout();
-    write(stdout, (byte *) str->char_arr, hstr_len(str));
+    write(stdout_handle, (byte *) str->char_arr, hstr_len(str));
 }
 
 POSER_API INLINE u0 put_hsn(hstr_t *str) {
     set_stdout();
-    write(stdout, (byte *) str->char_arr, hstr_len(str));
+    write(stdout_handle, (byte *) str->char_arr, hstr_len(str));
     put_n();
 }
 

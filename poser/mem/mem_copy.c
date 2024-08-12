@@ -48,7 +48,7 @@ inline void print_instruction_debug_message(char* message) {
 
 
 //We need this to make pasting the type and the comma together easier
-#define BASSERT_PASTE_SEQ(seq) #seq
+#define assert_PASTE_SEQ(seq) #seq
 
 //Horrifying macro for generating a casting for loop for a sized type.
 #define INTERNAL_MEM_COPY_FOR(dest, source, offset, len, type)              \
@@ -57,7 +57,7 @@ for(; len >= sizeof(type); len -= sizeof(type)) {                           \
     Debug printing function, this should get entirely optimized out when
     MEMCOPY_INSTRUCTION_DEBUG is 0
     */                                                                      \
-    print_instruction_debug_message(BASSERT_PASTE_SEQ(type) ",");                   \
+    print_instruction_debug_message(assert_PASTE_SEQ(type) ",");                   \
                                                                             \
     /*We do a cast of both sides to */                                      \
     *((type*) (dest + offset)) = *((type *) (source + offset));             \

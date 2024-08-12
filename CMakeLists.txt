@@ -24,6 +24,9 @@ add_executable(${PROJECT_NAME}
 
         main.c
 
+        # /fstr
+        poser/fstr/fstr.c
+
         # /io
         poser/io/put.c
 
@@ -43,12 +46,11 @@ add_executable(${PROJECT_NAME}
         poser/sys/___chkstk_ms.c
 
         # /thrd
-        poser/thrd/mutex.c
         poser/thrd/spinlock.c
         poser/thrd/thread.c
 
 
-        )
+        poser/fstr/fstr.c poser/mem/mem_cmp.c)
 
 if (WIN32)
     target_link_libraries(${PROJECT_NAME} PRIVATE kernel32)

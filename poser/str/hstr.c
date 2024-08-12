@@ -26,13 +26,13 @@ u64 internal_C_strlen(char *data) {
 
 
 u0 hstr_set_end(hstr_t *str, u64 len) {
-    bassert(str->char_arr != NULL);
+    assert(str->char_arr != NULL);
     str->end_ptr = str->char_arr + len;
-    bassert(str->end_ptr != NULL);
+    assert(str->end_ptr != NULL);
 }
 
 u64 hstr_len(hstr_t *str) {
-    bassert(str->char_arr <= str->end_ptr);
+    assert(str->char_arr <= str->end_ptr);
     return ((u64) str->end_ptr - (u64) &str->char_arr[0]);
 }
 
@@ -83,7 +83,7 @@ hstr_t *hstr_fromCs(char *source) {
     }
 
     hstr_set_end(str, len);
-    bassert(hstr_len(str) == internal_C_strlen(source));
+    assert(hstr_len(str) == internal_C_strlen(source));
 
     return str;
 }

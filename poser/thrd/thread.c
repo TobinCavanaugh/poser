@@ -15,7 +15,11 @@ void *thread_wrapper(void *data) {
     ++active_thread_count;
 
     /*Call the actual function here*/
-    ti.thread->result = ti.thread->function(ti.args);
+    void *retVal = ti.thread->function(ti.args);
+    if (retVal != NULL) {
+        ti.thread->result = retVal;
+    }
+
     ti.thread->flag_completed = 1;
 
     --active_thread_count;

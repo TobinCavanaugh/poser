@@ -133,8 +133,6 @@ heap_block_t* find_block_of_ptr(void* ptr) {
 u0 hfree(void* ptr) {
     heap_block_t* block = find_block_of_ptr(ptr);
 
-    bassert(block != NULL);
-
     if (block != NULL)
     {
         block->freed = true;
@@ -169,7 +167,7 @@ byte* hrealloc(void* ptr, u64 size) {
 
     heap_block_t* current = find_block_of_ptr(ptr);
 
-    bassert(current != NULL);
+    assert(current != NULL);
 
     mem_copy(new, ptr, current->size);
 

@@ -2,7 +2,7 @@
 // Created by tobin on 7/3/2024.
 //
 
-#ifndef POSER_TO_STR_H
+#ifndef POSER_M_TO_STR_H
 #define POSER_TO_STR_H
 
 #include "hstr.h"
@@ -18,4 +18,4 @@ u0 i64_into_buf(chr* buf, i64 val);
 
 u0 u64_into_buf(chr *buf, u64 val);
 
-#endif //POSER_TO_STR_H
+#endif //POSER_M_TO_STR_H

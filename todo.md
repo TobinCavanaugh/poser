@@ -2,6 +2,7 @@
 
 Current todo (🔽 Priority):
 - [ ] : pull in fstr, maybe rename to hstr_t?
+- [ ] : multithreading
 - [ ] : put_f() for putting with a format
 - [ ] : Nail down proper naming scheme, things are a bit fragmented atm
 - [ ] : Cross platform cpu feature getting, AVX, etc.

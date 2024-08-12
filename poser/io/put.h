@@ -10,7 +10,10 @@
 #include "../comp/rare.h"
 #include "put_f.h"
 
-/// Write a string to the stdout
+
+u64 get_stdout_handle();
+
+/// Write a string to the stdout_handle
 /// \param str The string
 /// \return
 POSER_API INLINE u0 put_s(char *str);
@@ -30,5 +33,7 @@ POSER_API INLINE u0 put_i64n(i64 val);
 POSER_API INLINE u0 put_u64(u64 val);
 
 POSER_API INLINE u0 put_u64n(u64 val);
+
+POSER_API INLINE u0 write(u64 handle, byte *data, u64 len);
 
 #endif //POSER_PUTS_H

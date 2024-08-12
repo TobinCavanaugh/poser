@@ -6,10 +6,13 @@
 #define POSER_THREAD_H
 
 #if SYS_OS == OS_WIN
+
 #include <windows.h>
+
 #endif
 
 #include "../dialect.h"
+#include "../mem/halloc.h"
 
 static u64 active_thread_count = 0;
 
