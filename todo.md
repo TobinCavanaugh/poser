@@ -6,6 +6,16 @@ Current todo (🔽 Priority):
 - [ ] : put_f() for putting with a format
 - [ ] : Nail down proper naming scheme, things are a bit fragmented atm
 - [ ] : Cross platform cpu feature getting, AVX, etc.
+- [ ] : Tests!!!!
+
+
+
+---
+
+#### 2024-08-12:
+- [X] : string interpolation via awesome macros
+
+Read title. Feels a bit like I just broke some real ground in C.
 
 ---
 

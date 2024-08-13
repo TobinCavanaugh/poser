@@ -1,6 +1,11 @@
 //
 // Created by tobin on 2024-08-11.
 //
+
+//TODO Remove redundant spaces
+/*IT IS HIGHLY RECOMMENDED YOU OVERRIDE THE FILE TYPE OF THIS IN YOUR IDE TO
+BE PLAIN TEXT TO AVOID TERRIBLE INDEXING TIMES*/
+
 //Thanks to Daniel Hardman / dhh1128  : https://gist.github.com/dhh1128/36bc220b10f6dafefa33#file-macros_overridden_by_arg_count
 
 

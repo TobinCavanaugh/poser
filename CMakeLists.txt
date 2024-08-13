@@ -22,7 +22,7 @@ set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -U INLINE -DINLINE=inline")
 
 add_executable(${PROJECT_NAME}
 
-        main.c
+        entry.c
 
         # /fstr
         poser/fstr/fstr.c
@@ -32,6 +32,7 @@ add_executable(${PROJECT_NAME}
 
         # /mem
         poser/mem/halloc.c
+        poser/mem/mem_cmp.c
         poser/mem/mem_copy.c
         poser/mem/mem_move.c
         poser/mem/mem_set.c
@@ -49,8 +50,10 @@ add_executable(${PROJECT_NAME}
         poser/thrd/spinlock.c
         poser/thrd/thread.c
 
+        # /fstr
+        poser/fstr/fstr.c
 
-        poser/fstr/fstr.c poser/mem/mem_cmp.c)
+        )
 
 if (WIN32)
     target_link_libraries(${PROJECT_NAME} PRIVATE kernel32)

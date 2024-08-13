@@ -10,6 +10,12 @@ typedef struct {
     void *args;
 } thread_internal_t;
 
+/// This function that is called in place of calling the thread function
+/// directly as to provide functionality such as flag_complete, maintenance
+/// of thread count, and allowing for thread internal data to clean itself
+/// up.
+/// \param data
+/// \return
 void *thread_wrapper(void *data) {
     thread_internal_t ti = *(thread_internal_t *) data;
     ++active_thread_count;
