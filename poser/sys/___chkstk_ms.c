@@ -1,9 +1,7 @@
 //
 // Created by tobin on 2024-07-26.
 //
-#include "sys_plat.h"
 #include "___chkstk_ms.h"
-#include "sys_exit.h"
 
 #if SYS_OS == OS_LINUX
 #include <sys/resource.h>

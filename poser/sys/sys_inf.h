@@ -1,11 +1,11 @@
 //
 // Created by tobin on 2024-07-21.
 //
+#include "../dialect.h"
 
 #ifndef SYS_INF_H
 #define SYS_INF_H
 
-#include "../dialect.h"
 
 #if SYS_OS == OS_WIN
 #include <windows.h>

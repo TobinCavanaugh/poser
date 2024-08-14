@@ -1,11 +1,11 @@
 //
 // Created by TobinC on 6/4/2024.
 //
+#include "bint.h"
 
 #ifndef ASSERT_H
 #define ASSERT_H
 
-#include "bint.h"
 
 /* TODO to shrink resulting file size, consider having a generic internal assert
  * function that can be called with args via the assert(n) macros */

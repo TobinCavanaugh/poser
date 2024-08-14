@@ -2,10 +2,10 @@
 // Created by tobin on 5/31/2024.
 //
 
+#include "../dialect.h"
+
 #ifndef BOBLIB_hstr_H
 #define BOBLIB_hstr_H
-
-#include "../dialect.h"
 
 typedef struct
 {

@@ -1,14 +1,14 @@
 //
 // Created by tobin on 7/2/2024.
 //
-
-#ifndef POSER_PUTS_H
-#define POSER_PUTS_H
-
 #include "../dialect.h"
 #include "../str/str.h"
 #include "../comp/rare.h"
 #include "put_f.h"
+
+#ifndef POSER_PUTS_H
+#define POSER_PUTS_H
+
 
 
 u64 get_stdout_handle();

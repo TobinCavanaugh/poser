@@ -1,6 +1,9 @@
 //
 // Created by tobin on 2024-08-08.
 //
+#include "../dialect.h"
+#include "../mem/halloc.h"
+
 
 #ifndef POSER_THREAD_H
 #define POSER_THREAD_H
@@ -11,8 +14,6 @@
 
 #endif
 
-#include "../dialect.h"
-#include "../mem/halloc.h"
 
 static u64 active_thread_count = 0;
 

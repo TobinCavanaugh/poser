@@ -6,6 +6,8 @@
 #define POSER____CHKSTK_MS_H
 
 #include "../dialect.h"
+#include "sys_plat.h"
+#include "sys_exit.h"
 
 u0 ___chkstk_ms(u0);
 

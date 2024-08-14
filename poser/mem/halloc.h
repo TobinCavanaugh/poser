@@ -1,11 +1,11 @@
 //
 // Created by tobin on 7/2/2024.
 //
+#include "mem_copy.h"
 
 #ifndef POSER_MEM_H
 #define POSER_MEM_H
 
-#include "mem_copy.h"
 
 
 byte *halloc(u64 size);

@@ -1,12 +1,12 @@
 //
 // Created by tobin on 7/2/2024.
 //
+#include "comp/bint.h"
+#include "comp/bflt.h"
 
 #ifndef POSER_DIALECT_H
 #define POSER_DIALECT_H
 
-#include "comp/bint.h"
-#include "comp/bflt.h"
 
 #define true 1
 #define false 0

@@ -9,7 +9,6 @@
 #endif
 
 #include "sys_exit.h"
-#include "sys_plat.h"
 
 u0 sys_exit(u64 code) {
 

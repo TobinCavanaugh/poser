@@ -1,11 +1,10 @@
 //
 // Created by tobin on 2024-08-10.
 //
+#include "../dialect.h"
 
 #ifndef POSER_SPINLOCK_H
 #define POSER_SPINLOCK_H
-
-#include "../dialect.h"
 
 typedef struct {
     atomic u8

@@ -1,12 +1,12 @@
 //
 // Created by tobin on 2024-07-26.
 //
+#include "../poser.h"
+#include "va_args.h"
 
 #ifndef POSER_VA_INIT_H
 #define POSER_VA_INIT_H
 
-#include "../poser.h"
-#include "va_args.h"
 
 /* The variable passed into count MUST be the last argument in the parent
  * functions argument list. DO NOT use a value that includes a

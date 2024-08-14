@@ -9,7 +9,6 @@
 #endif
 
 #include "sleep.h"
-#include "../comp/comp.h"
 
 u0 sleep_us(u64 us) {
     HANDLE timer;

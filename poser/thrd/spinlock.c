@@ -13,7 +13,7 @@ spinlock_t spinlock_create() {
 
 /*@formatter:off*/
 inline u8 spinlock_islocked(spinlock_t *x) {
-return !!x->state;
+    return !!x->state;
 }
 /*@formatter:on */
 
