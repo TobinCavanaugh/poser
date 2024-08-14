@@ -6,7 +6,7 @@
 
 u0 mem_set(void *start, u8 data, u64 size) {
 
-    u8 *des = start;
+    u8 * des = start;
 
     u64 i = 0;
     for (; i < size; i++) {

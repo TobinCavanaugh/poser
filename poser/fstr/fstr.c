@@ -19,7 +19,6 @@ void internal_fstr_insert(fstr *str, u64 index, const char *add, u64 addLen);
 
 void internal_remove_buf(fstr *str, const char *removeBuf, const u64 removeLen);
 
-
 #pragma endregion PROTOTYPES
 
 

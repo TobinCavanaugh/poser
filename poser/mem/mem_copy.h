@@ -7,6 +7,6 @@
 #define MEMCOPY_H
 
 
-u0 mem_copy(const void* destination, const void* source, i64 len);
+u0 mem_copy(const void *destination, const void *source, i64 len);
 
 #endif //MEMCOPY_H

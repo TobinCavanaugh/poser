@@ -7,7 +7,6 @@
 #define POSER_MEM_H
 
 
-
 byte *halloc(u64 size);
 
 u0 hfree(void *ptr);

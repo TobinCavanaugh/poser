@@ -30,20 +30,20 @@ fstr *_fmt_to_fstr(int count, ...) {
 
     int fmtCount = count - 1;
 
-    // I ♥ VLAs
+    /*I ♥ VLAs*/
     char *strPtrs_array[fmtCount];
 
-    //Our format is always the 1st arg
+    /*Our format is always the 1st arg*/
     char *cfmt = va_arg(ap.list, char *);
 
-    //Iterate all others and place them in the strPtrs array
-    int i = 1;
+    /*Iterate all others and place them in the strPtrs array*/
+    int i = 0;
     for (; i < ap.count; i++) {
         char *str = va_arg(ap.list, char*);
-        strPtrs_array[i - 1] = str;
+        strPtrs_array[i] = str;
     }
 
-    //Perform our actual string formatting here
+    /*Perform our actual string formatting here*/
     fstr *res = fstr_fmt_str_args(cfmt, strPtrs_array, fmtCount);
 
     int v = 0;
@@ -55,7 +55,5 @@ fstr *_fmt_to_fstr(int count, ...) {
     hfree(cfmt);
 
     va_end(ap.list);
-//    fstr_print(res);
-//    fstr_free(res);
     return res;
 }

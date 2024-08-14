@@ -40,7 +40,7 @@
 #include "../io/put.h"
 #endif
 
-inline void print_instruction_debug_message(char* message) {
+inline void print_instruction_debug_message(char *message) {
 #if MEM_COPY_INSTRUCTION_DEBUG
     put_sn(message);
 #endif
@@ -64,7 +64,7 @@ for(; len >= sizeof(type); len -= sizeof(type)) {                           \
     offset += sizeof(type);                                                 \
 }
 
-u0 mem_copy(const void* destination, const void* source, i64 len) {
+u0 mem_copy(const void *destination, const void *source, i64 len) {
     //Use stupid brain implementation if the MEM_COPY_BUGGY macro is not 0
 #if MEM_COPY_BUGGY
     u8* d = destination;
@@ -75,23 +75,19 @@ u0 mem_copy(const void* destination, const void* source, i64 len) {
     }
     //Use the cool dude implementation if the MEM_COPY_BUGGY macro is 0
 #else
-    typedef struct
-    {
+    typedef struct {
         u64 _a, _b, _c, _d;
     } mem_copy_block32B_t;
 
-    typedef struct
-    {
+    typedef struct {
         mem_copy_block32B_t _a, _b, _c, _d;
     } mem_copy_block128B_t;
 
-    typedef struct
-    {
+    typedef struct {
         mem_copy_block128B_t _a, _b;
     } mem_copy_block256B_t;
 
-    typedef struct
-    {
+    typedef struct {
         mem_copy_block256B_t _a, _b;
     } mem_copy_block512B_t;
 

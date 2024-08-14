@@ -10,7 +10,6 @@
 #include "va_args.h"
 #include "va_init.h"
 
-
 #ifndef POSER_COMP_H
 #define POSER_COMP_H
 
