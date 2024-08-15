@@ -8,6 +8,6 @@ u0 put_clr(){
 #if SYS_OS == OS_LINUX
     put_s("\033[2J");
 #elif SYS_OS == OS_WIN
-    sys_command("cls");
+    sys_command("cmd.exe /c cls");
 #endif
 }

@@ -9,35 +9,30 @@
 /// \return
 u8 sys_command(char *command) {
     returnif_(command == NULL, 0);
-    assertn(0 == 1, "UNIMPLEMENTED");
+
+#if SYS_OS == OS_LINUX
+    //    assertn(0 == 1, "UNIMPLEMENTED");
+///https://stackoverflow.com/questions/16398688/how-system-function-in-c-works
+#endif
 
 #if SYS_OS == OS_WIN
 
     STARTUPINFO si = {0};
     PROCESS_INFORMATION pi = {0};
+    int retVal = 1;
+    retVal = CreateProcess(NULL, (LPSTR) command,
+                           NULL, NULL,
+                           TRUE, 0,
+                           NULL, NULL,
+                           &si, &pi);
 
-/*
-    u8 res = CreateProcess(NULL,
-                           (LPSTR) command,
-                           NULL,
-                           NULL,
-                           0, 0,
-                           NULL,
-                           NULL,
-                           &si,
-                           &pi);
-*/
+    returnif_(!retVal, 0);
 
-//    returnif_(!res, 0);
-
-    WaitForSingleObject(pi.hProcess, u64_max);
-
-    u32 x;
-    GetExitCodeProcess(pi.hProcess, &x);
-
+    WaitForSingleObject(pi.hProcess, u32_max);
+    GetExitCodeProcess(pi.hProcess, (LPDWORD) &retVal);
     CloseHandle(pi.hProcess);
     CloseHandle(pi.hThread);
 
-    return x;
+    return 1;
 #endif
 }

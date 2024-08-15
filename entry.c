@@ -13,9 +13,6 @@ TUPLE_FUNC({
  */
 u8 entry() {
 
-    sys_command("cls");
-    return 1;
-
     put_fn(": Yipee :");
     put_fn(": {0} :", 10);
     put_fn(": {0} {1} :", 10, 200000000);
@@ -25,9 +22,8 @@ u8 entry() {
     put_fn(": {0} {1} {2} {3} {4} {5} :", 10, 200, "aa", "zz", -100, 99929999);
     put_fn(": {0} {1} {2} {3} {4} {5} {6} :", 10, 200, "aa", "zz", -100, -99, NULL);
 
+
     put_clr();
-//TODO need console clearing function
-//    put_f("{0}", sys_command("cls"));
 
     return 1;
 }
