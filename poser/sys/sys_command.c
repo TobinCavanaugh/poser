@@ -7,7 +7,7 @@
 /// Returns 1 if succeeded, 0 if failed
 /// \param command
 /// \return
-u8 sys_command(char *command) {
+u8 _sys_command(char *command) {
     returnif_(command == NULL, 0);
 
 #if SYS_OS == OS_LINUX
@@ -35,4 +35,13 @@ u8 sys_command(char *command) {
 
     return 1;
 #endif
+}
+
+/// Returns 1 if succeeded, 0 if failed. Runs the command as `cmd /c {command}`
+/// \param command
+/// \return
+u8 sys_command(char * command){
+    fstr* a = fmt_to_fstr("cmd /c {0}", command);
+    _sys_command(fstr_to_stack(a));
+    fstr_free(a);
 }

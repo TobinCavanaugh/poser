@@ -93,4 +93,5 @@ hstr_t *u64_to_hstr(u64 val) {
 
 
 u0 f128_into_buf(char *buf, u16 buf_len, f128 val) {
+    assertn(0 == 1, "NOT IMPLEMENTED");
 }

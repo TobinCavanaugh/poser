@@ -5,6 +5,7 @@
 #include "str.h"
 #include "../mem/mem_move.h"
 #include "../dialect.h"
+#include "../comp/comp.h"
 
 #ifndef POSER_M_TO_STR_H
 #define POSER_TO_STR_H

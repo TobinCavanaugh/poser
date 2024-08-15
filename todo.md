@@ -1,16 +1,27 @@
 #### Poser todo
 
 Current todo (random priority):
-- [ ] : pull in fstr, maybe rename to hstr_t?
-- [ ] : multithreading 
+
 - [ ] : Nail down proper naming scheme, things are a bit fragmented atm
 - [ ] : Cross platform cpu feature getting, AVX, etc.
 - [ ] : Tests!!!!
 - [ ] : Separate out write() from the put functions
+- [ ] : Possibly build parity between fstr.h & sstr.h. Sounds like a HUMONGOUS
+  pain but I'd be willing to do it for the bit.
+
+---
+
+#### 2024-08-15:
+- [X] : pull in fstr, maybe rename to hstr_t?
+- [X] : multithreading
+- [X] : put_clr made
+- [X] : sys_command functions
+
 
 ---
 
 #### 2024-08-14:
+
 - [X] : put_f() for putting with a format
 
 put_f properly implemented. wahoo
@@ -18,6 +29,7 @@ put_f properly implemented. wahoo
 ---
 
 #### 2024-08-12:
+
 - [X] : string interpolation via awesome macros
 
 Read title. Feels a bit like I just broke some real ground in C.
@@ -25,6 +37,7 @@ Read title. Feels a bit like I just broke some real ground in C.
 ---
 
 #### 2024-07-27:
+
 - [X] : Variadic args
 
 Properly implemented varargs, va_init is pretty dope & convenient so that's
@@ -34,15 +47,15 @@ no issues with it thus far.
 
 ---
 
-#### 2024-07-26: 
+#### 2024-07-26:
+
 Really bummed right now because apparently implementing my own
 variadic args is not really a doable thing cross platform, apparently it's
 mostly done compiler side, like my good friend `alloca(3)` (aka `salloc()`). So
 I guess I'm just gonna use the compiler built in version which is kinda lame.
 Also spent all day trying to get `___chkstk_ms()` working, but to no avail,
 currently we're just rawdoggin stack allocations and letting stack overwrite
-heap data, which is waver behavior. 
-
+heap data, which is waver behavior.
 
 &emsp; Also on the topic of `salloc()` my current implementation just does a
 call to compiler implemented `__builtin_alloca()` which is omoha. I tried

@@ -2,6 +2,7 @@
 // Created by tobin on 2024-07-21.
 //
 #include "../dialect.h"
+#include "../comp/comp.h"
 
 #ifndef SYS_INF_H
 #define SYS_INF_H

@@ -11,6 +11,8 @@
 #include "sleep.h"
 
 u0 sleep_us(u64 us) {
+
+#if SYS_OS == OS_WIN
     HANDLE timer;
     LARGE_INTEGER due_time;
 
@@ -27,13 +29,18 @@ u0 sleep_us(u64 us) {
 
     WaitForSingleObject(timer, u32_max);
     CloseHandle(timer);
+#endif
+
+#if SYS_OS == OS_LINUX
+    assertn(0 == 1, "NOT IMPLEMENTED")
+#endif
 }
 
 u0 sleep_ms(u64 ms) {
 #if SYS_OS == OS_WIN
     Sleep(ms);
 #else
-    assertn(false, "NOT IMPLEMENTED");
+    sleep_us(ms * 1000);
 #endif
 }
 

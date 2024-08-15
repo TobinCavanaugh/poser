@@ -7,9 +7,9 @@
 fstr *fstr_fmt_str_args(char *cFmt, char **strPtrs_array, u64 strPtrsCount) {
     fstr *fmt = fstr_from_C(cFmt);
 
-    u8 v = 0;
     static char buf[3 + 2 + 1] = "{xxx}";
 
+    u8 v = 0;
     for (; v < strPtrsCount; v++) {
         i64_into_buf(buf, v);
 

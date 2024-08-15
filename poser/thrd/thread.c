@@ -65,6 +65,10 @@ thread_t *thread_create(void *(*Function)(void *), byte *args) {
                               ((unsigned long *) &thread_id));
 #endif
 
+#if SYS_OS == OS_LINUX
+    assertn( 0 == 1, "NOT IMPLEMENTED");
+#endif
+
     t->id = thread_id;
 
     return t;

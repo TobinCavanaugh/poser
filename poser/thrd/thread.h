@@ -3,7 +3,7 @@
 //
 #include "../dialect.h"
 #include "../mem/halloc.h"
-
+#include "../comp/assert.h"
 
 #ifndef POSER_THREAD_H
 #define POSER_THREAD_H

@@ -18,6 +18,7 @@
 u64 min_ptr = 0x1000;
 u64 max_ptr = 0x7FFFFFFF;
 
+//TODO still weird
 u0 ___chkstk_ms(u0) {
 
     return;

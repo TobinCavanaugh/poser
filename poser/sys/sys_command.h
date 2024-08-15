@@ -4,6 +4,7 @@
 
 #include "../dialect.h"
 #include "../comp/comp.h"
+#include "../fstr/fstr_to_stack.h"
 
 #if SYS_OS == OS_WIN
 #include <windows.h>

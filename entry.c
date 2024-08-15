@@ -1,4 +1,5 @@
 #include "poser/poser.h"
+#include "poser/fstr/fstr_to_stack.h"
 
 TUPLE_FUNC({
                u8 _x;
@@ -22,8 +23,9 @@ u8 entry() {
     put_fn(": {0} {1} {2} {3} {4} {5} :", 10, 200, "aa", "zz", -100, 99929999);
     put_fn(": {0} {1} {2} {3} {4} {5} {6} :", 10, 200, "aa", "zz", -100, -99, NULL);
 
+    sys_command("cls && dir");
 
-    put_clr();
+//    put_clr();/
 
     return 1;
 }

@@ -6,8 +6,18 @@
 
 
 u64 sys_get_page_size() {
+
+    u64 pageSize = 0;
+
+#if SYS_OS == OS_WIN
     SYSTEM_INFO si;
     GetSystemInfo(&si);
-    DWORD pageSize = si.dwPageSize;
+    pageSize = (u64) si.dwPageSize;
+#endif
+
+#if SYS_OS == OS_LINUX
+    assertn(0 == 1, "NOT IMPLEMENTED");
+#endif
+
     return pageSize;
 }
