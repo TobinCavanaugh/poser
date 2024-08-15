@@ -1,5 +1,4 @@
 #include "poser/poser.h"
-#include "poser/io/put_f.h"
 
 TUPLE_FUNC({
                u8 _x;
@@ -12,21 +11,23 @@ TUPLE_FUNC({
  * USE typeof() to handle type safe printing
  * Maybe make use of function pointers to allow for expanding the type printing?
  */
-
-
-//TODO Logic should generally get split between heap strings and stack strings.
-
 u8 entry() {
 
-    put_fn(": Yipee ");
-    put_fn(": {0} ", 10);
-    put_fn(": {0} {1} ", 10, 200000000);
-    put_fn(": {0} {1} {2} ", 10, 200, "aa");
-    put_fn(": {0} {1} {2} {3} ", 10, -2000000000, "aa", "zz");
-    put_fn(": {0} {1} {2} {3} {4} ", 10, 200, "aa", "zz", -100);
-    put_fn(": {0} {1} {2} {3} {4} {5} {6} ", 10, 200, "aa", "zz", -100, -99, NULL);
+    sys_command("cls");
+    return 1;
 
+    put_fn(": Yipee :");
+    put_fn(": {0} :", 10);
+    put_fn(": {0} {1} :", 10, 200000000);
+    put_fn(": {0} {1} {2} :", 10, 200, "aa");
+    put_fn(": {0} {1} {2} {3} :", 10, -2000000000, "aa", "zz");
+    put_fn(": {0} {1} {2} {3} {4} :", 10, 200, "aa", "zz", -100);
+    put_fn(": {0} {1} {2} {3} {4} {5} :", 10, 200, "aa", "zz", -100, 99929999);
+    put_fn(": {0} {1} {2} {3} {4} {5} {6} :", 10, 200, "aa", "zz", -100, -99, NULL);
+
+    put_clr();
 //TODO need console clearing function
+//    put_f("{0}", sys_command("cls"));
 
     return 1;
 }

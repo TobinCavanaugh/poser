@@ -5,7 +5,7 @@
 #include "to_str.h"
 
 /// Writes the stringified version of the val into the buf. The buffers MINIMUM length should be 23 characters
-/// @param buf : The str, this should be a minimum allocated length of
+/// @param buf : The str, this should be a minimum allocated length of 23
 /// @param val : The value to be stringified into the str
 u0 i64_into_buf(chr *buf, i64 val) {
     //Im lazy and the code doesnt properly not work for zero values,
@@ -89,4 +89,8 @@ hstr_t *u64_to_hstr(u64 val) {
     hstr_set_end(buf, str_len(buf->char_arr));
 
     return buf;
+}
+
+
+u0 f128_into_buf(char *buf, u16 buf_len, f128 val) {
 }

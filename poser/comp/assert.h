@@ -3,8 +3,6 @@
 //
 #include "bint.h"
 
-#ifndef ASSERT_H
-#define ASSERT_H
 
 
 /* TODO to shrink resulting file size, consider having a generic internal assert
@@ -33,5 +31,7 @@ if(!condVal) {                                                                  
 #define assert(cond) {}
 #endif
 
+#ifndef ASSERT_H
+#define ASSERT_H
 
 #endif //ASSERT_H

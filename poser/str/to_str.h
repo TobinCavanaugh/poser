@@ -17,4 +17,6 @@ u0 i64_into_buf(chr *buf, i64 val);
 
 u0 u64_into_buf(chr *buf, u64 val);
 
+u0 f128_into_buf(char * buf, u16 buf_len, f128 val);
+
 #endif //POSER_M_TO_STR_H

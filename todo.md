@@ -1,14 +1,19 @@
 #### Poser todo
 
-Current todo (🔽 Priority):
+Current todo (random priority):
 - [ ] : pull in fstr, maybe rename to hstr_t?
-- [ ] : multithreading
-- [ ] : put_f() for putting with a format
+- [ ] : multithreading 
 - [ ] : Nail down proper naming scheme, things are a bit fragmented atm
 - [ ] : Cross platform cpu feature getting, AVX, etc.
 - [ ] : Tests!!!!
+- [ ] : Separate out write() from the put functions
 
+---
 
+#### 2024-08-14:
+- [X] : put_f() for putting with a format
+
+put_f properly implemented. wahoo
 
 ---
 
@@ -46,9 +51,7 @@ cuz `___chkstk_ms()` doesn't work properly it often segfaults because its
 pissy about me modifying stack memory??? I remember being able to do this
 safely but I guess not... maybe i gotta cast it to a `u8*` then modify that.
 
-
 &emsp; I guess this is enough procrastination calculus, and I oughta get to
 work on making sure variadic args will work.
-
 
 ---

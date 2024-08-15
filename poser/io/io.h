@@ -3,6 +3,7 @@
 //
 #include "../dialect.h"
 #include "put.h"
+#include "put_clr.h"
 #include "put_f.h"
 
 #ifndef POSER_IO_H
