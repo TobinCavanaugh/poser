@@ -34,8 +34,7 @@ void *thread_wrapper(void *data) {
     CloseHandle(ti.thread->_handle);
 #endif
 
-    hfree(ti.thread);
-    hfree(&ti);
+    hfree(data);
 }
 
 u0 thread_join(thread_t *thread, void **out) {
@@ -44,6 +43,8 @@ u0 thread_join(thread_t *thread, void **out) {
     if (out != NULL) {
         *out = thread->result;
     }
+
+    hfree(thread);
 }
 
 thread_t *thread_create(void *(*Function)(void *), byte *args) {
