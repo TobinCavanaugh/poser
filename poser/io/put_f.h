@@ -4,7 +4,7 @@
 
 #include "../dialect.h"
 #include "../fstr/fstr.h"
-#include "../str/fmt_to_fstr.h"
+#include "../str/fmt_to.h"
 #include "../str/m_args_wrapper.h"
 
 #define put_f(...) ({ fstr * a = fmt_to_fstr(__VA_ARGS__); fstr_print(a); fstr_free(a); })

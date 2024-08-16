@@ -1,46 +1,35 @@
 #include "poser/poser.h"
 #include "poser/fstr/fstr_to_stack.h"
+#include "poser/sstr/sstr_ext.h"
 
-TUPLE_FUNC({
-               u8 _x;
-               u8 _y;
-           }, function_call)(int x, int y) {
+/*
+TUPLE_FUNC({ u8 _x; u8 _y; }, function_call)(int x, int y) {
     return (function_call_result_t) {100, 90};
 }
+*/
 
 /* Requirements for put_f:
  * USE typeof() to handle type safe printing
  * Maybe make use of function pointers to allow for expanding the type printing?
  */
+//TODO: Allow for {} to auto index in put_f
 
-int x = 0;
-
-void dothing() {
-//    put_s("aaa");
-    ++x;
+u0 put_xx() {
+    put_sn(fmt_to_sstr("{0} {1} {2} {3}", 1, "zz", 120, 55));
 }
+
+
+/*TODO Branch between stack and heap put_f*/
 
 u8 entry() {
 
     while (1) {
-        thread_t *t = thread_create((void *(*)(void *)) dothing, NULL);
-        thread_join(t, NULL);
-        put_fn("{0}", "aa");
-//        put_clr();
+        put_xx();
     }
 
-//    put_fn(": Yipee :");
-//    put_fn(": {0} :", 10);
-//    put_fn(": {0} {1} :", 10, 200000000);
-//    put_fn(": {0} {1} {2} :", 10, 200, "aa");
-//    put_fn(": {0} {1} {2} {3} :", 10, -2000000000, "aa", "zz");
-//    put_fn(": {0} {1} {2} {3} {4} :", 10, 200, "aa", "zz", -100);
-//    put_fn(": {0} {1} {2} {3} {4} {5} :", 10, 200, "aa", "zz", -100, 99929999);
-//    put_fn(": {0} {1} {2} {3} {4} {5} {6} :", 10, 200, "aa", "zz", -100, -99, NULL);
+    //TODO benchmark echo vs put_s speeds lol
+//    sys_command("echo hi");
 
-//    sys_command("cls && dir");
-
-//    put_clr();/
 
     return 1;
 }

@@ -2,7 +2,7 @@
 // Created by tobin on 2024-08-13.
 //
 
-#include "fmt_to_fstr.h"
+#include "fmt_to.h"
 
 fstr *fstr_fmt_str_args(char *cFmt, char **strPtrs_array, u64 strPtrsCount) {
     fstr *fmt = fstr_from_C(cFmt);
@@ -24,6 +24,7 @@ fstr *fstr_fmt_str_args(char *cFmt, char **strPtrs_array, u64 strPtrsCount) {
 
     return fmt;
 }
+
 
 fstr *_fmt_to_fstr(int count, ...) {
     struct va_list_c ap = va_init(count);
