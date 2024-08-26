@@ -7,7 +7,10 @@
 fstr *fstr_fmt_str_args(char *cFmt, char **strPtrs_array, u64 strPtrsCount) {
     fstr *fmt = fstr_from_C(cFmt);
 
-    static char buf[3 + 2 + 1] = "{xxx}";
+
+//          Parenthesis v
+//    Number Length v   v
+    static char buf[3 + 2 + 1] = "";
 
     u8 v = 0;
     for (; v < strPtrsCount; v++) {
@@ -27,33 +30,42 @@ fstr *fstr_fmt_str_args(char *cFmt, char **strPtrs_array, u64 strPtrsCount) {
 
 
 fstr *_fmt_to_fstr(int count, ...) {
+    int i;
     struct va_list_c ap = va_init(count);
 
     int fmtCount = count - 1;
 
     /*I ♥ VLAs*/
-    char *strPtrs_array[fmtCount];
+    m_to_str_t *m_to_str_array[fmtCount];
 
     /*Our format is always the 1st arg*/
-    char *cfmt = va_arg(ap.list, char *);
+    m_to_str_t *cfmt = va_arg(ap.list, m_to_str_t *);
+
+    /*Iterate our m_to_str_t*/
+    for (i = 0; i < ap.count; i++) {
+        m_to_str_t *x = va_arg(ap.list, m_to_str_t *);
+        m_to_str_array[i] = x;
+    }
 
     /*Iterate all others and place them in the strPtrs array*/
-    int i = 0;
-    for (; i < ap.count; i++) {
-        char *str = va_arg(ap.list, char*);
-        strPtrs_array[i] = str;
+    char *strPtrs_array[fmtCount];
+    for (i = 0; i < fmtCount; i++) {
+        strPtrs_array[i] = m_to_str_array[i]->buf;
     }
 
     /*Perform our actual string formatting here*/
-    fstr *res = fstr_fmt_str_args(cfmt, strPtrs_array, fmtCount);
+    fstr *res = fstr_fmt_str_args(cfmt->buf, strPtrs_array, fmtCount);
 
-    int v = 0;
-    for (; v < fmtCount; v++) {
-        hfree(strPtrs_array[v]);
+    if (!cfmt->isStack) {
+        hfree(m_to_str_array[i]->buf);
     }
 
+    for (i = 0; i < fmtCount; i++) {
+        if (!m_to_str_array[i]->isStack) {
+            hfree(m_to_str_array[i]->buf);
+        }
+    }
 
-    hfree(cfmt);
 
     va_end(ap.list);
     return res;

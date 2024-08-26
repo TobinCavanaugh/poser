@@ -562,7 +562,8 @@ u0 fstr_println(const fstr *str) {
     fstr_print(str);
 
     if (USING_CHAR) {
-        write(get_stdout_handle(), "\n", 2);
+        put_n();
+//        write(get_stdout_handle(), "\n", 2);
     }
 }
 

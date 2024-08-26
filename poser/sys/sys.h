@@ -8,6 +8,7 @@
 #include "sys_exit.h"
 #include "sys_inf.h"
 #include "sys_plat.h"
+#include "sys_time.h"
 
 #ifndef POSER_SYS_H
 #define POSER_SYS_H

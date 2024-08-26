@@ -13,10 +13,10 @@
  * increment/decrement operator. This will explode everything and you will want
  * to die.
  * Performs a va_start and returns a struct va_list_c */
-#define va_init(count) ({                           \
-    u8 count_val = count;                           \
+#define va_init(__count) ({                           \
+    u8 count_val = __count;                           \
     va_list list_name;                              \
-    va_start(list_name, count);                     \
+    va_start(list_name, __count);                     \
     struct va_list_c vlc = {list_name, count_val};  \
     /*return*/ vlc;                                 \
 })

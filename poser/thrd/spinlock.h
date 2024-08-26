@@ -7,8 +7,7 @@
 #define POSER_SPINLOCK_H
 
 typedef struct {
-    atomic u8
-    state;
+    atomic u8 state;
 } spinlock_t;
 
 

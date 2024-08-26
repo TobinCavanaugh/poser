@@ -11,7 +11,7 @@ u8 _sys_command(char *command) {
     returnif_(command == NULL, 0);
 
 #if SYS_OS == OS_LINUX
-    //    assertn(0 == 1, "UNIMPLEMENTED");
+        assertn(0 == 1, "UNIMPLEMENTED");
 ///https://stackoverflow.com/questions/16398688/how-system-function-in-c-works
 #endif
 

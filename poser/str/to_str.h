@@ -14,10 +14,13 @@ hstr_t *u64_to_hstr(u64 val);
 
 hstr_t *i64_to_hstr(i64 val);
 
+
 u0 i64_into_buf(chr *buf, i64 val);
 
 u0 u64_into_buf(chr *buf, u64 val);
 
 u0 f128_into_buf(char * buf, u16 buf_len, f128 val);
+
+#define i64_to_sstr(__val) ({ i64 __tmp = __val; $ __data = salloc(23); i64_into_buf(__data, __tmp); __data; })
 
 #endif //POSER_M_TO_STR_H

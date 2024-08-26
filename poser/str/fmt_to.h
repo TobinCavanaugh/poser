@@ -20,14 +20,16 @@ fstr *_fmt_to_fstr(int count, ...);
 /*TODO get error handling etc.*/
 /* THANKS JESUS! */
 #define fmt_to_sstr(...) ({                          \
-    u8 allCount = COUNT_ARGS(__VA_ARGS__);           \
-    char* allArgs[] = {WRAP_S(__VA_ARGS__)};         \
                                                      \
-    char * fmt = allArgs[0];                         \
+    PRAG_PUSH;                                       \
+    u8 allCount = COUNT_ARGS(__VA_ARGS__);           \
+    m_to_str_t* allArgs[] = {WRAP_S(__VA_ARGS__)};   \
+                                                     \
+    char * fmt = allArgs[0]->buf;                    \
                                                      \
     i8 count = allCount - 1;                         \
                                                      \
-    char * strPtrs_array[allCount - 1];              \
+    m_to_str_t * strPtrs_array[allCount - 1];        \
     int x = 0;                                       \
     for(; x < count; x++){                           \
         strPtrs_array[x] = allArgs[x + 1];           \
@@ -43,15 +45,17 @@ fstr *_fmt_to_fstr(int count, ...);
         t = $append(t, buf);                         \
         t = $append(t, "}");                         \
                                                      \
-        repl = $replace(repl, t, strPtrs_array[xx]); \
+        repl = $replace(repl, t, strPtrs_array[xx]->buf); \
     }                                                \
                                                      \
     int v = 0;                                       \
-    for(; v < count; v++){                           \
-        hfree(strPtrs_array[v]);                     \
+    for(; v < allCount; v++){                        \
+        if(!allArgs[v]->isStack){                    \
+            hfree(allArgs[v]);                       \
+        }                                            \
     }                                                \
                                                      \
-    hfree(fmt);                                      \
+    PRAG_POP;                                                 \
     repl;                                            \
 })
 
