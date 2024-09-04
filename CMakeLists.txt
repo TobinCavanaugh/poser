@@ -53,7 +53,8 @@ add_executable(${PROJECT_NAME}
         # /fstr
         poser/fstr/fstr.c
 
-        poser/str/fmt_to.c poser/sys/sys_command.c poser/io/put_clr.c poser/sys/sys_time.c)
+        poser/str/fmt_to.c poser/sys/sys_command.c poser/io/put_clr.c poser/sys/sys_time.c
+        poser/sstr/sstr_ext.h)
 
 if (WIN32)
     target_link_libraries(${PROJECT_NAME} PRIVATE kernel32)

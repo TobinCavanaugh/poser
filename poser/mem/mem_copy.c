@@ -33,7 +33,7 @@
 
 #include "../io/put.h"
 
-#define MEM_COPY_BUGGY 0
+#define MEM_COPY_BUGGY 1
 #define MEM_COPY_INSTRUCTION_DEBUG 0
 
 #if MEM_COPY_INSTRUCTION_DEBUG
