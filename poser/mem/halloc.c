@@ -47,7 +47,7 @@ static const u64 alignment = 16;
 static u64 total_heap_allocation = 0;
 
 
-/// The boblib counterpart to malloc. Performs a heap allocation.
+/// The boblib counterpart to halloc. Performs a heap allocation.
 /// Use hfree to free memory allocated by this
 byte *halloc(u64 size) {
 #ifdef MEM_HEAP_USE_CANARY
