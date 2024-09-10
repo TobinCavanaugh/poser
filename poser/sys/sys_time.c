@@ -15,10 +15,14 @@ u64 sys_get_time_us() {
     QueryPerformanceCounter(&ticks);
     i64 total = ticks.QuadPart;
 
-    result = (u64) (((f128) total * 1000000.0) / (f128) freq.QuadPart);
+    result = (u64)(((f128)total * 1000000.0) / (f128)freq.QuadPart);
 #endif
 
     return result;
+}
+
+f64 sys_get_time_sf64() {
+    return ((f128)sys_get_time_us()) / 1000.0 / 1000.0;
 }
 
 u64 sys_get_time_ms() {

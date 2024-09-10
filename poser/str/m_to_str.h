@@ -7,19 +7,26 @@
 #ifndef POSER_M_TO_STR_H
 #define POSER_M_TO_STR_H
 
-#define PRAG_PUSH _Pragma("GCC diagnostic push"); _Pragma("GCC diagnostic ignored \"-Wpointer-to-int-cast\""); _Pragma("GCC diagnostic ignored \"-Wpointer-sign\"") _Pragma("GCC diagnostic ignored \"-Wint-conversion\"")
+#define PRAG_PUSH _Pragma("GCC diagnostic push");                \
+    _Pragma("GCC diagnostic ignored \"-Wpointer-to-int-cast\""); \
+    _Pragma("GCC diagnostic ignored \"-Wint-to-pointer-cast\""); \
+    _Pragma("GCC diagnostic ignored \"-Wpointer-sign\"")         \
+    _Pragma("GCC diagnostic ignored \"-Wint-conversion\"")
+
 #define PRAG_POP  _Pragma("GCC diagnostic pop")
 
 //#define PRAG_PUSH
 //#define PRAG_POP
 
 
-typedef struct {
-    char *buf;
-    u8 isStack: 1;
+typedef struct
+{
+    char* buf;
+    u8 isStack : 1;
 } m_to_str_t;
 
-typedef struct {
+typedef struct
+{
     f128 val;
     u8 decimals;
 } f_options;
@@ -45,7 +52,7 @@ typedef struct {
     u16 : ({ PRAG_PUSH; u16 __a = (u16) _arg; m_to_str_t __ret = (m_to_str_t) {i64_to_sstr(__a), 1}; PRAG_POP; &__ret; }), \
     u8  : ({ PRAG_PUSH; u8 __a  = (u8)  _arg; m_to_str_t __ret = (m_to_str_t) {i64_to_sstr(__a), 1}; PRAG_POP; &__ret; }), \
                                                                                                                            \
-    m_to_str_t* : ({ m_to_str_t * __a = (m_to_str_t*) _arg; __a; })                                                        \
+    m_to_str_t* : ({ PRAG_PUSH; m_to_str_t * __a = (m_to_str_t*) _arg; __a; PRAG_POP; })                                   \
 )
 
 

@@ -12,5 +12,9 @@
 u8 entry() {
     test_all();
 
+    char* x = "aaa";
+
+    put_f(x);
+
     return 1;
 }

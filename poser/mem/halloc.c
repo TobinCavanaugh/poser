@@ -31,7 +31,7 @@
 #endif
 
 /// This datastructure handles our freed heap blocks
-typedef struct heap_block {
+typedef struct heap_block_t {
     struct heap_block_t *next;
     u64 size;
     u8 freed;
@@ -49,6 +49,7 @@ static u64 total_heap_allocation = 0;
 
 /// The boblib counterpart to halloc. Performs a heap allocation.
 /// Use hfree to free memory allocated by this
+__attribute__((malloc))
 byte *halloc(u64 size) {
 #ifdef MEM_HEAP_USE_CANARY
     //Add some extra size for the canary

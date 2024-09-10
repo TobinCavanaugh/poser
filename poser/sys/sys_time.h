@@ -19,4 +19,6 @@ u64 sys_get_time_ms();
 
 u64 sys_get_time_s();
 
+f64 sys_get_time_sf64();
+
 #endif //POSER_SYS_TIME_H

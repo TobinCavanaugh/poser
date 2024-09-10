@@ -3,14 +3,15 @@
 //
 #include "bint.h"
 
-
-
 /* TODO to shrink resulting file size, consider having a generic internal assert
  * function that can be called with args via the assert(n) macros */
 
 #if ENABLE_ASSERTS == 1
 #define ASSERT_PASTE_SEQ(seq) #seq
 #define assert_CAT_SEQ(x, y) x ## y
+
+#undef assertn
+#undef assert
 
 /// Assert that when not true, prints out the note, the condition and the URL to the file and line
 /// @param cond
