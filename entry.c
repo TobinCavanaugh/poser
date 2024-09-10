@@ -11,7 +11,6 @@
 
 u8 entry() {
     test_all();
-    put_fn("{0}{1}{2}", 10, "aa", 30);
 
     return 1;
 }
