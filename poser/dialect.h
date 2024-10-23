@@ -57,18 +57,24 @@ POSER_API u8 entry();
     name ## _result_t name /*@formatter:on : clion directive*/
 
 #define INTERNAL_DEFINE_RESULT(type)                                  \
-    typedef struct { u8 success; type value; } result_ ## type ## _t;
+    typedef struct { type value; u8 success; } result_ ## type ## _t;
 
 INTERNAL_DEFINE_RESULT(i8);
+
 INTERNAL_DEFINE_RESULT(i32);
+
 INTERNAL_DEFINE_RESULT(i64);
 
 INTERNAL_DEFINE_RESULT(u8);
+
 INTERNAL_DEFINE_RESULT(u32);
+
 INTERNAL_DEFINE_RESULT(u64);
 
 INTERNAL_DEFINE_RESULT(f32);
+
 INTERNAL_DEFINE_RESULT(f64);
+
 INTERNAL_DEFINE_RESULT(f128);
 
 #endif //POSER_DIALECT_H

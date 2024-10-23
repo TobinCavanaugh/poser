@@ -7,6 +7,6 @@
 #define POSER_MEM_CMP_H
 
 
-i8 mem_cmp(void *a, void *b, u64 size);
+i8 mem_cmp(const void* a, const void* b, const u64 size);
 
 #endif //POSER_MEM_CMP_H

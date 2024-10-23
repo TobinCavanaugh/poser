@@ -56,8 +56,10 @@ add_executable(${PROJECT_NAME}
         poser/str/fmt_to.c poser/sys/sys_command.c poser/io/put_clr.c poser/sys/sys_time.c
         poser/sstr/sstr_ext.h
         poser/str/str_cmp.c
-        poser/str/str_cmp.h)
+        poser/str/str_cmp.h
+        poser/io/write.c
+        poser/io/write.h)
 
 if (WIN32)
-    target_link_libraries(${PROJECT_NAME} PRIVATE kernel32)
+    target_link_libraries(${PROJECT_NAME} PRIVATE kernel32 -lshlwapi)
 endif ()

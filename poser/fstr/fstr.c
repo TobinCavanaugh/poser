@@ -270,7 +270,7 @@ void internal_replace_sub(fstr *str,
         slice.end = str->end;
 
         //Do a check to see if we are out of string bounds
-        if (slice.data > slice.end) {
+        if ((u64) slice.data > slice.end) {
             contains = 0;
         }
     }

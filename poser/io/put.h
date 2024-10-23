@@ -3,6 +3,8 @@
 //
 #include "../dialect.h"
 #include "../str/str.h"
+#include "../sstr/sstr.h"
+#include "../sstr/sstr_ext.h"
 #include "../comp/rare.h"
 #include "put_f.h"
 

@@ -8,9 +8,7 @@
 #include "../comp/assert.h"
 
 #if SYS_OS == OS_WIN
-
 #include <memoryapi.h>
-
 #else
 #include <unistd.h>
 #include <sys/syscall.h>
@@ -80,7 +78,7 @@ byte *halloc(u64 size) {
     //No open blocks
     heap_block_t *newBlock;
 
-    //TODO This is not ideal afaik
+    //TODO This is not ideal afaik. We should be allocating pages then placing our LL within that
 #if SYSTEM_OS == OS_WIN
     newBlock = VirtualAlloc(NULL, size, MEM_COMMIT | MEM_RESERVE, PAGE_READWRITE);
 #elif

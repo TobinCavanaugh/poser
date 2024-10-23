@@ -3,6 +3,16 @@
 Current todo (random priority):
 
 - [ ] : Nail down proper naming scheme, things are a bit fragmented atm
+- [ ] : Make put_fn work automagically with {}
+- [ ] : Proper file modification functionality
+    - [ ] : Insert
+    - [ ] : Append
+    - [ ] : Overwrite
+    - [ ] : Clear
+    - [ ] : RemoveAt
+    - [ ] : ReadAt
+    - [ ] : ReadAll
+    - [ ] : GetSize
 - [ ] : Cross platform cpu feature getting, AVX, etc.
 - [ ] : Tests!!!!
 - [ ] : Separate out write() from the put functions
@@ -12,11 +22,11 @@ Current todo (random priority):
 ---
 
 #### 2024-08-15:
+
 - [X] : pull in fstr, maybe rename to hstr_t?
 - [X] : multithreading
 - [X] : put_clr made
 - [X] : sys_command functions
-
 
 ---
 
