@@ -6,7 +6,7 @@
 #define WRITE_H
 
 #include "../dialect.h"
-#include "put.h"
+#include "../io/put.h"
 
 typedef enum
 {

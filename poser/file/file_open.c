@@ -2,7 +2,7 @@
 // Created by tobin on 2024-10-01.
 //
 
-#include "write.h"
+#include "file_open.h"
 
 #if SYS_OS == OS_WIN
 #include <windows.h>
@@ -11,7 +11,8 @@
 
 
 result_file_t file_open(char* path, F_OPEN_TYPES type) {
-    bool exists = PathFileExistsA(path);
+#if SYS_OS == OS_WIN
+    // bool exists = PathFileExistsA(path);
 
     if (type & F_OPEN_C && type & F_OPEN_D)
     {
@@ -47,4 +48,8 @@ result_file_t file_open(char* path, F_OPEN_TYPES type) {
     }
 
     return (result_file_t){(file_t){type, hh}, 1, 0, 0};
+#elif SYS_OS == OS_LINUX
+
+
+#endif
 }

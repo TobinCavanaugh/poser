@@ -7,6 +7,7 @@
 #include "../sstr/sstr_ext.h"
 #include "../comp/rare.h"
 #include "put_f.h"
+#include "../file/file.h"
 
 #ifndef POSER_PUTS_H
 #define POSER_PUTS_H

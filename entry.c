@@ -2,7 +2,6 @@
 #include "poser/fstr/fstr_to_stack.h"
 #include "poser/sstr/sstr_ext.h"
 #include "poser/sstr/test.h"
-#include "poser/io/write.h"
 
 /* Requirements for put_f:
  * USE typeof() to handle type safe printing

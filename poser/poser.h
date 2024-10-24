@@ -12,6 +12,9 @@
 /* Compile related headers */
 #include "comp/comp.h"
 
+/* File related headers*/
+#include "file/file.h"
+
 /* IO related headers*/
 #include "io/io.h"
 
